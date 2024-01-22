@@ -30,3 +30,7 @@ toggleShow(burgerIcon, burgerNav);
 const cityActive = document.querySelector('.header-city a');
 const cityList = document.querySelector('.header-city__popup');
 toggleShow(cityActive, cityList);
+
+const cityActiveFooter = document.querySelector('.footer-city a');
+const cityListFooter = document.querySelector('.footer-city__popup');
+toggleShow(cityActiveFooter, cityListFooter);
