@@ -1,0 +1,275 @@
+.about
+  padding: var(--gap) 0
+  .title
+    margin-bottom: 40px
+  &-grid
+    @include flexbox
+    justify-content: space-between
+    gap: 20px
+  &-item
+    width: 100%
+    background: #fff
+    border-radius: var(--border-radius)
+    padding: 45px 55px
+    counter-increment: about
+    &-md
+      width: calc(100% / 2 - 10px)
+      padding: 15px
+      height: 550px
+      @include flexbox
+      flex-direction: column
+      align-items: flex-start
+      img
+        width: 100%
+        flex: 1
+        min-height: 210px
+        border-radius: 15px
+      .about-item__text
+        padding: 20px
+        max-width: 500px
+    &__text
+      max-width: 420px
+    &__title
+      font-size: 40px
+      line-height: 1.1
+      font-weight: 600
+      padding-left: 70px
+      position: relative
+      letter-spacing: -0.03em
+      &::before
+        content: counter(about, decimal-leading-zero)
+        position: absolute
+        top: 0
+        left: 0
+        @include flexbox
+        align-items: center
+        justify-content: center
+        text-align: center
+        font-size: 15px
+        font-weight: 600
+        color: #fff
+        width: 51px
+        height: 46px
+        background: url("data:image/svg+xml,%3Csvg width='51' height='46' viewBox='0 0 51 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_429_1572)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20.4354 45.0599C33.8623 48.0697 47.5071 40.1398 50.5169 26.7129C53.302 14.2882 42.7031 3.93469 30.2784 1.14956C17.8487 -1.63671 3.83381 3.19399 1.04754 15.6237C-1.96332 29.0554 7.00379 42.049 20.4354 45.0599Z' fill='%233AABE2'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_429_1572' x='0.464111' y='0.38501' width='50.5015' height='49.3108' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='7.5'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_429_1572'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A") no-repeat center
+    &__desc
+      margin-top: 25px
+      font-size: 18px
+      line-height: 1.4
+      opacity: 0.75
+    &__more
+      @include flexbox
+      align-items: center
+      justify-content: center
+      margin-top: 15px
+      width: 100%
+      a
+        color: var(--color-blue)
+        border-bottom: 2px dashed var(--color-blue)
+        font-size: 15px
+        font-weight: 700
+        line-height: 25px
+    &:nth-child(1)
+      @include flexbox
+      align-items: flex-start
+      gap: 15px
+      .about-item__col
+        &:nth-child(1)
+          width: 46%
+        &:nth-child(2)
+          width: calc(54% - 15px)
+          @include flexbox
+          gap: 15px
+      .about-item__title
+        margin-right: -40px
+        &::before
+          background: url("data:image/svg+xml,%3Csvg width='51' height='46' viewBox='0 0 51 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_429_1572)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20.4354 45.0599C33.8623 48.0697 47.5071 40.1398 50.5169 26.7129C53.302 14.2882 42.7031 3.93469 30.2784 1.14956C17.8487 -1.63671 3.83381 3.19399 1.04754 15.6237C-1.96332 29.0554 7.00379 42.049 20.4354 45.0599Z' fill='%23EA6CA5'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_429_1572' x='0.464111' y='0.38501' width='50.5015' height='49.3108' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='7.5'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_429_1572'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A") no-repeat center
+    &:nth-child(2)
+      @include flexbox
+      align-items: flex-start
+    &:nth-child(3)
+      @include flexbox
+      align-items: center
+      padding-top: 25px
+      padding-right: 25px
+      padding-bottom: 25px
+      img
+        width: calc(100% - 420px - 40px)
+        height: 300px
+        margin-left: auto
+        border-radius: var(--border-radius)
+        object-fit: cover
+        object-position: center
+    &:nth-child(4)
+      .about-item__title::before
+        background: url("data:image/svg+xml,%3Csvg width='51' height='46' viewBox='0 0 51 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_429_1572)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20.4354 45.0599C33.8623 48.0697 47.5071 40.1398 50.5169 26.7129C53.302 14.2882 42.7031 3.93469 30.2784 1.14956C17.8487 -1.63671 3.83381 3.19399 1.04754 15.6237C-1.96332 29.0554 7.00379 42.049 20.4354 45.0599Z' fill='%23EAA16C'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_429_1572' x='0.464111' y='0.38501' width='50.5015' height='49.3108' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='7.5'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_429_1572'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A") no-repeat center
+    &:nth-child(5)
+      .about-item__title::before
+        background: url("data:image/svg+xml,%3Csvg width='51' height='46' viewBox='0 0 51 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_429_1572)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20.4354 45.0599C33.8623 48.0697 47.5071 40.1398 50.5169 26.7129C53.302 14.2882 42.7031 3.93469 30.2784 1.14956C17.8487 -1.63671 3.83381 3.19399 1.04754 15.6237C-1.96332 29.0554 7.00379 42.049 20.4354 45.0599Z' fill='%23EA6CA5'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_429_1572' x='0.464111' y='0.38501' width='50.5015' height='49.3108' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='7.5'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_429_1572'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A") no-repeat center
+  &-photo
+    &__grid-1
+      @include flexbox
+      justify-content: space-between
+      gap: 15px
+      margin-top: 30px
+      img
+        border-radius: 10px
+        object-fit: cover
+        object-position: center
+        &:nth-child(1)
+          width: calc(37% - 15px)
+          height: 158px
+        &:nth-child(2)
+          width: 63%
+          height: 158px
+        &:nth-child(3)
+          width: 63%
+          height: 178px
+        &:nth-child(4)
+          width: calc(37% - 15px)
+          height: 178px
+          transform: rotate(-3deg)
+    &__grid-2
+      @include flexbox
+      justify-content: space-between
+      gap: 15px
+      width: calc(100% - 15px - 130px)
+      img
+        border-radius: 10px
+        object-fit: cover
+        object-position: center
+        &:nth-child(1)
+          height: 140px
+          width: calc(37% - 15px)
+        &:nth-child(2)
+          height: 140px
+          width: 63%
+        &:nth-child(3)
+          height: 140px
+          width: 63%
+        &:nth-child(4)
+          height: 140px
+          width: calc(37% - 15px)
+        &:nth-child(5)
+          height: 260px
+          width: calc((100% - 15px) / 2)
+        &:nth-child(6)
+          height: 260px
+          width: calc((100% - 15px) / 2)
+    &__grid-3
+      @include flexbox
+      gap: 15px
+      width: 130px
+      img
+        width: 100%
+        border-radius: 10px
+        object-fit: cover
+        object-position: center
+        height: 180px
+        &:nth-child(1)
+          transform: rotate(3deg)
+  &-design
+    width: 100%
+    margin-top: 40px
+    @include flexbox
+    align-items: flex-start
+    gap: 25px
+    &__item
+      flex: 1
+      padding: 25px
+      border-radius: var(--border-radius)
+      background: #f9f9f9
+      h3
+        padding: 10px 10px 25px 10px
+        font-size: 25px
+        font-weight: 700
+        line-height: 1
+        color: var(--active-color)
+      &.rose
+        --active-color: var(--color-rose)
+        .about-design__more
+          background: #F3E7ED
+      &.blue
+        --active-color: var(--color-blue)
+        .about-design__more
+          background: #E2EDF3
+      &.orange
+        --active-color: #EAA16C
+        .about-design__more
+          background: #F3ECE7
+    &__photo
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 5px
+      img
+        height: 125px
+        width: 100%
+        object-fit: cover
+        object-position: center
+        border-radius: 10px
+    &__more
+      width: 100%
+      height: 125px
+      border-radius: 15px
+      @include flexbox
+      align-items: center
+      justify-content: center
+      font-size: 22px
+      font-weight: 600
+      border: 1px dashed var(--active-color)
+      color: var(--active-color)
+  &-quote
+    @include flexbox
+    align-items: flex-start
+    max-width: 550px
+    width: calc(100% - 420px)
+    margin-left: auto
+    &__text
+      width: calc(100% - 150px)
+      margin-right: auto
+      border-radius: 35px
+      border: 1px solid var(--color-rose)
+      background: #f9f9f9
+      color: rgba(21, 43, 54, 0.75)
+      font-size: 15px
+      line-height: 1.4
+      padding: 25px 35px
+      position: relative
+      &::after
+        content: ''
+        position: absolute
+        bottom: 35px
+        right: -16px
+        width: 16px
+        height: 13px
+        background: url("data:image/svg+xml,%3Csvg width='16' height='13' viewBox='0 0 16 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_433_1694)'%3E%3Cmask id='path-1-inside-1_433_1694' fill='white'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M-393.749 -72.7487C-404 -62.4975 -404 -45.9983 -404 -13V17C-404 49.9983 -404 66.4975 -393.749 76.7487C-383.497 87 -366.998 87 -334 87H-69C-36.0017 87 -19.5025 87 -9.25125 76.7487C1 66.4975 1 49.9983 1 17V12.1266C4.82846 6.86152 9.23309 4.40118 15.6422 2.21472C9.75284 2.44843 5.26883 2.17922 1 0.973373V-13C1 -45.9983 1 -62.4975 -9.25125 -72.7487C-19.5025 -83 -36.0017 -83 -69 -83H-334C-366.998 -83 -383.497 -83 -393.749 -72.7487Z'/%3E%3C/mask%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M-393.749 -72.7487C-404 -62.4975 -404 -45.9983 -404 -13V17C-404 49.9983 -404 66.4975 -393.749 76.7487C-383.497 87 -366.998 87 -334 87H-69C-36.0017 87 -19.5025 87 -9.25125 76.7487C1 66.4975 1 49.9983 1 17V12.1266C4.82846 6.86152 9.23309 4.40118 15.6422 2.21472C9.75284 2.44843 5.26883 2.17922 1 0.973373V-13C1 -45.9983 1 -62.4975 -9.25125 -72.7487C-19.5025 -83 -36.0017 -83 -69 -83H-334C-366.998 -83 -383.497 -83 -393.749 -72.7487Z' fill='%23F9F9F9'/%3E%3Cpath d='M-393.749 76.7487L-393.042 76.0416L-393.042 76.0416L-393.749 76.7487ZM-9.25125 76.7487L-8.54414 77.4558L-8.54414 77.4558L-9.25125 76.7487ZM1 12.1266L0.191215 11.5385L0 11.8014V12.1266H1ZM15.6422 2.21472L15.9651 3.16116L15.6025 1.21551L15.6422 2.21472ZM1 0.973373H0V1.73003L0.72816 1.93572L1 0.973373ZM-9.25125 -72.7487L-8.54414 -73.4558L-8.54415 -73.4558L-9.25125 -72.7487ZM-403 -13C-403 -29.5274 -402.998 -41.8224 -401.728 -51.2713C-400.461 -60.6914 -397.95 -67.1328 -393.042 -72.0416L-394.456 -73.4558C-399.798 -68.1134 -402.413 -61.1796 -403.71 -51.5378C-405.002 -41.9247 -405 -29.4709 -405 -13H-403ZM-403 17V-13H-405V17H-403ZM-393.042 76.0416C-397.95 71.1328 -400.461 64.6914 -401.728 55.2713C-402.998 45.8224 -403 33.5274 -403 17H-405C-405 33.4709 -405.002 45.9247 -403.71 55.5378C-402.413 65.1796 -399.798 72.1134 -394.456 77.4558L-393.042 76.0416ZM-334 86C-350.527 86 -362.822 85.9979 -372.271 84.7275C-381.691 83.461 -388.133 80.9505 -393.042 76.0416L-394.456 77.4558C-389.113 82.7982 -382.18 85.4134 -372.538 86.7097C-362.925 88.0021 -350.471 88 -334 88V86ZM-69 86H-334V88H-69V86ZM-9.95836 76.0416C-14.8672 80.9505 -21.3086 83.461 -30.7287 84.7275C-40.1776 85.9979 -52.4726 86 -69 86V88C-52.5291 88 -40.0753 88.0021 -30.4622 86.7097C-20.8204 85.4134 -13.8866 82.7982 -8.54414 77.4558L-9.95836 76.0416ZM0 17C0 33.5274 -0.00212373 45.8224 -1.27249 55.2713C-2.53899 64.6914 -5.0495 71.1328 -9.95836 76.0416L-8.54414 77.4558C-3.20175 72.1134 -0.586639 65.1796 0.709676 55.5378C2.00212 45.9247 2 33.4709 2 17H0ZM0 12.1266V17H2V12.1266H0ZM15.3193 1.26828C8.80108 3.49197 4.18508 6.04595 0.191215 11.5385L1.80878 12.7147C5.47185 7.67709 9.66511 5.31038 15.9651 3.16116L15.3193 1.26828ZM0.72816 1.93572C5.14268 3.18272 9.74643 3.44947 15.6818 3.21394L15.6025 1.21551C9.75924 1.44738 5.39498 1.17573 1.27184 0.011031L0.72816 1.93572ZM0 -13V0.973373H2V-13H0ZM-9.95836 -72.0416C-5.0495 -67.1328 -2.53899 -60.6914 -1.27249 -51.2713C-0.00212373 -41.8224 0 -29.5274 0 -13H2C2 -29.4709 2.00212 -41.9247 0.709676 -51.5378C-0.586639 -61.1796 -3.20175 -68.1134 -8.54414 -73.4558L-9.95836 -72.0416ZM-69 -82C-52.4726 -82 -40.1776 -81.9979 -30.7287 -80.7275C-21.3086 -79.461 -14.8672 -76.9505 -9.95836 -72.0416L-8.54415 -73.4558C-13.8866 -78.7982 -20.8204 -81.4134 -30.4622 -82.7097C-40.0753 -84.0021 -52.5291 -84 -69 -84V-82ZM-334 -82H-69V-84H-334V-82ZM-393.042 -72.0416C-388.133 -76.9505 -381.691 -79.461 -372.271 -80.7275C-362.822 -81.9979 -350.527 -82 -334 -82V-84C-350.471 -84 -362.925 -84.0021 -372.538 -82.7097C-382.18 -81.4134 -389.113 -78.7982 -394.456 -73.4558L-393.042 -72.0416Z' fill='%23EA6CA5' mask='url(%23path-1-inside-1_433_1694)'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_433_1694'%3E%3Crect width='16' height='13' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") no-repeat center
+      p
+        margin-top: 15px
+        &:first-child
+          margin-top: 0
+        b
+          font-weight: 600
+        i
+          width: 20px
+          height: 16px
+          display: inline-block
+          vertical-align: middle
+          background: url("data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 15 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_433_1695)'%3E%3Cpath d='M10.645 0.195801C9.36288 0.195801 8.21538 0.819134 7.49996 1.77538C6.78454 0.819134 5.63704 0.195801 4.35496 0.195801C2.18038 0.195801 0.416626 1.96663 0.416626 4.15538C0.416626 4.9983 0.551209 5.77747 0.784959 6.49997C1.90413 10.0416 5.35371 12.1595 7.06079 12.7404C7.30163 12.8254 7.69829 12.8254 7.93913 12.7404C9.64621 12.1595 13.0958 10.0416 14.215 6.49997C14.4487 5.77747 14.5833 4.9983 14.5833 4.15538C14.5833 1.96663 12.8195 0.195801 10.645 0.195801Z' fill='%23FF3C67'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_433_1695' x='0' y='0' width='17' height='15' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dx='2' dy='2'/%3E%3CfeGaussianBlur stdDeviation='6'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.45 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_433_1695'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A") no-repeat top left
+    &__author
+      width: 120px
+      text-align: center
+      img
+        width: 120px
+        height: 120px
+        border-radius: 100%
+        object-fit: cover
+        object-position: center
+      b
+        display: block
+        margin-top: 10px
+        font-weight: 700
+        font-size: 14px
+        line-height: 20px
+      p
+        font-size: 12px
+        line-height: 20px
+        opacity: 0.35
