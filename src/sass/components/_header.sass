@@ -1,0 +1,186 @@
+.header
+  width: calc(100% - 50px)
+  max-width: 1390px
+  margin: 20px auto
+  background: #fff
+  border-radius: var(--border-radius)
+  padding: 15px
+  box-shadow: 21px 16px 59px 0px rgba(83, 86, 95, 0.10), 84px 66px 107px 0px rgba(83, 86, 95, 0.09), 190px 148px 145px 0px rgba(83, 86, 95, 0.05), 337px 264px 171px 0px rgba(83, 86, 95, 0.01), 527px 412px 187px 0px rgba(83, 86, 95, 0.00)
+  backdrop-filter: blur(12.5px)
+  @include flexbox
+  align-items: center
+  position: relative
+  z-index: 50
+  &-logo
+    margin-left: 30px
+  &-city
+    margin-left: 20px
+    font-size: 14px
+    line-height: 18px
+    color: #393a41
+    span
+      display: inline-block
+      vertical-align: middle
+      width: 14px
+      height: 14px
+      background: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.99976 0C4.08517 0 1.72241 2.36275 1.72241 5.27735C1.72241 6.25206 1.9132 7.25878 2.46069 7.98438L6.99976 14L11.5388 7.98438C12.0361 7.32533 12.2771 6.16022 12.2771 5.27735C12.2771 2.36275 9.91435 0 6.99976 0ZM6.99976 3.05651C8.22611 3.05651 9.22058 4.05099 9.22058 5.27733C9.22058 6.5037 8.22611 7.49817 6.99976 7.49817C5.77341 7.49817 4.77894 6.5037 4.77894 5.27735C4.77894 4.05099 5.77341 3.05651 6.99976 3.05651Z' fill='%234CB1E3'/%3E%3C/svg%3E%0A") no-repeat center
+    a
+      font-weight: 700
+      color: var(--color-blue)
+      border-bottom: 1px dashed var(--color-blue)
+    &__popup
+      position: absolute
+      top: calc(100% + 20px)
+      max-width: 1160px
+      left: 115px
+      right: 0
+      background: #fff
+      padding: 40px 40px 20px
+      column-count: 4
+      font-size: 18px
+      font-weight: 600
+      box-shadow: 22px 41px 103px 0px rgba(0, 0, 0, 0.05), 88px 166px 188px 0px rgba(0, 0, 0, 0.04), 198px 372px 253px 0px rgba(0, 0, 0, 0.03), 353px 662px 300px 0px rgba(0, 0, 0, 0.01), 551px 1034px 328px 0px rgba(0, 0, 0, 0.00)
+      border-radius: 20px
+      @include flexbox
+      align-items: flex-start
+      gap: 40px
+      transform: translateY(-20px)
+      opacity: 0
+      pointer-events: none
+      transition: .25s
+      &.show
+        transform: translateY(0px)
+        opacity: 1
+        pointer-events: auto
+      ul
+        flex: 1
+      li
+        margin-bottom: 20px
+        a
+          transition: .25s
+          position: relative
+          padding-left: 26px
+          &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            margin: auto 0
+            width: 6px
+            height: 6px
+            border-radius: 100%
+            background: var(--color-blue)
+          &:hover
+            color: var(--color-blue)
+        &.active a
+          color: var(--color-blue)
+  &-categories
+    @include flexbox
+    align-items: center
+    gap: 35px
+    margin: 0 auto
+    li
+      a
+        display: block
+        font-size: 15px
+        font-weight: 700
+        line-height: 25px
+        padding: 10px 30px
+        border-radius: 999px
+        background: rgba(242, 242, 242, 0.45)
+        transition: .25s
+        &:hover
+          background: rgba(242, 242, 242, 0.8)
+      &.rose span
+        color: var(--color-rose)
+      &.blue span
+        color: var(--color-blue)
+      &.orange span
+        background: var(--color-orange)
+        background-clip: text
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+  &-social
+    @include flexbox
+    align-items: center
+    li
+      margin-left: -10px
+      &:first-child
+        margin-left: 0
+      a
+        display: block
+        img
+          border-radius: 100%
+          object-fit: cover
+          object-position: center
+          width: 40px
+          height: 40px
+          border: 3px solid #F6FAFD
+  &-phone
+    font-size: 22px
+    line-height: 1
+    font-weight: 600
+    color: #393a41
+    display: block
+    margin-left: 30px
+    i
+      font-style: normal
+      opacity: 0.1
+  &-burger
+    width: 60px
+    height: 60px
+    background-color: #f2f2f2
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='5' height='5' rx='1.5' fill='%234CB1E3'/%3E%3Crect x='7.5' width='5' height='5' rx='1.5' fill='%234CB1E3'/%3E%3Crect x='15' width='5' height='5' rx='1.5' fill='%234CB1E3'/%3E%3Crect y='7.5' width='5' height='5' rx='1.5' fill='%234CB1E3'/%3E%3Crect x='7.5' y='7.5' width='5' height='5' rx='1.5' fill='%234CB1E3'/%3E%3Crect x='15' y='7.5' width='5' height='5' rx='1.5' fill='%234CB1E3'/%3E%3Crect y='15' width='5' height='5' rx='1.5' fill='%234CB1E3'/%3E%3Crect x='7.5' y='15' width='5' height='5' rx='1.5' fill='%234CB1E3'/%3E%3Crect x='15' y='15' width='5' height='5' rx='1.5' fill='%234CB1E3'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat
+    background-position: center
+    border-radius: 10px
+    cursor: pointer
+    margin-left: 40px
+  &-nav
+    position: absolute
+    top: calc(100% + 20px)
+    right: 0
+    background: #fff
+    border-radius: 20px
+    padding: 40px
+    padding-right: 66px
+    box-shadow: 22px 41px 103px 0px rgba(0, 0, 0, 0.05), 88px 166px 188px 0px rgba(0, 0, 0, 0.04), 198px 372px 253px 0px rgba(0, 0, 0, 0.03), 353px 662px 300px 0px rgba(0, 0, 0, 0.01), 551px 1034px 328px 0px rgba(0, 0, 0, 0.00)
+    font-size: 20px
+    font-weight: 700
+    line-height: 1
+    transform: translateY(-20px)
+    opacity: 0
+    pointer-events: none
+    transition: .25s
+    &.show
+      transform: translateY(0px)
+      opacity: 1
+      pointer-events: auto
+    li
+      margin-top: 20px
+      &:first-child
+        margin-top: 0
+      a
+        opacity: 0.35
+        transition: .25s
+        position: relative
+        padding-left: 26px
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          bottom: 0
+          margin: auto 0
+          width: 6px
+          height: 6px
+          border-radius: 100%
+          background: var(--color-blue)
+          opacity: 0
+        &:hover
+          opacity: 1
+      &.active a
+        opacity: 1
+        &::before
+          opacity: 1
