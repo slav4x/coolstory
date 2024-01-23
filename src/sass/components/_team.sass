@@ -1,0 +1,107 @@
+.team
+  padding: var(--gap) 0
+  .title
+    text-align: center
+    margin-bottom: 20px
+  .subtitle
+    text-align: center
+    max-width: 700px
+    margin: 0 auto
+  &-grid
+    margin-top: 50px
+    @include flexbox
+    align-items: flex-start
+    gap: 20px
+  &-item
+    border-radius: var(--border-radius)
+    height: 450px
+    position: relative
+    width: calc((100% - 40px) / 3)
+    position: relative
+    overflow: hidden
+    padding: 50px 40px 40px
+    @include flexbox
+    flex-direction: column
+    align-items: flex-start
+    color: #fff
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    &::before
+      content: ''
+      position: absolute
+      bottom: -65px
+      left: 50%
+      transform: translateX(-50%) rotate(12deg)
+      width: 780px
+      height: 205px
+      backdrop-filter: blur(18px)
+      z-index: 5
+    &__icon
+      display: none
+      margin-bottom: 5px
+    &__title
+      max-width: 180px
+      font-size: 35px
+      font-weight: 600
+      line-height: 1
+      position: relative
+      z-index: 5
+    &__text
+      margin-top: auto
+      max-width: 260px
+      font-weight: 500
+      line-height: 1.4
+      position: relative
+      z-index: 10
+      p
+        margin-top: 10px
+    &__photo
+      position: absolute
+      bottom: 0
+      right: 0
+      max-width: initial
+      height: 100%
+      z-index: 1
+    &:nth-child(4)
+      width: calc(58% - 20px)
+      height: 350px
+      &::before
+        display: none
+      .team-item__icon
+        display: block
+      .team-item__text
+        margin-top: 5px
+        img
+          display: none
+    &:nth-child(5)
+      width: 42%
+      height: 350px
+      &::before
+        transform: translateX(-50%) rotate(8deg)
+      .team-item__icon
+        display: block
+      .team-item__text
+        max-width: 360px
+        img
+          display: none
+    &.blue
+      background-image: url(../img/team-blue.jpg)
+      &::before
+        background: linear-gradient(30deg, #276D90 11.53%, rgba(58, 171, 226, 0.00) 108.41%)
+        filter: drop-shadow(0px -42px 55px rgba(22, 51, 63, 0.28))
+    &.rose
+      background-image: url(../img/team-rose.jpg)
+      &::before
+        background: linear-gradient(30deg, #C55F8D 11.53%, rgba(234, 108, 165, 0.00) 108.41%)
+        filter: drop-shadow(0px -30px 68px rgba(78, 44, 60, 0.55))
+    &.orange
+      background-image: url(../img/team-orange.jpg)
+      &::before
+        background: linear-gradient(30deg, #B17C56 11.53%, rgba(234, 161, 108, 0.00) 108.41%)
+        filter: drop-shadow(0px -30px 68px rgba(155, 87, 38, 0.55))
+    &.green
+      background-image: url(../img/team-green.jpg)
+      &::before
+        background: linear-gradient(30deg, #69A45B 11.53%, rgba(125, 199, 107, 0.00) 108.41%)
+        filter: drop-shadow(0px -25.668px 58.182px #5B8151)
