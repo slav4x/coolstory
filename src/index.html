@@ -239,4 +239,12 @@
   </div>
 </section>
 
+{% set wa_bg = 'blue' %}
+{% set wa_btn = 'rose' %}
+{% include 'components/whatsapp.html' %}
+
+{% set wa_bg = 'rose' %}
+{% set wa_btn = 'blue' %}
+{% include 'components/whatsapp.html' %}
+
 {% endblock %}
