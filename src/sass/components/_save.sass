@@ -1,0 +1,37 @@
+.save
+  &-block
+    padding: 80px
+    overflow: hidden
+    position: relative
+    border-radius: var(--border-radius)
+    color: #fff
+    background: url(../img/save-bg.jpg) no-repeat center / cover
+    &__text
+      position: relative
+      z-index: 5
+      max-width: 450px
+      h3
+        font-size: 16px
+        font-weight: 500
+        margin-top: 15px
+        opacity: 0.75
+    &__price
+      position: relative
+      z-index: 5
+      @include flexbox
+      align-items: center
+      margin-top: 40px
+      max-width: 290px
+      img
+        width: 90px
+      p
+        width: calc(100% - 90px)
+        padding-left: 10px
+        font-weight: 500
+        line-height: 25px
+        opacity: 0.75
+    &__docs
+      position: absolute
+      bottom: -10px
+      right: -135px
+      max-width: initial
