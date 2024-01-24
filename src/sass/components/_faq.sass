@@ -1,0 +1,59 @@
+.faq
+  padding: var(--gap) 0
+  width: calc(100% - (var(--spacing) * 2))
+  max-width: 1390px
+  background: #fff
+  border-radius: var(--border-radius)
+  margin: 0 auto
+  & + .whatsapp
+    margin-top: 20px
+  &-grid
+    margin-top: 20px
+    @include flexbox
+    gap: 10px
+  &-col
+    width: calc(100% / 2 - 5px)
+  &-item
+    margin-top: 10px
+    background: #f9f9f9
+    border-radius: 15px
+    overflow: hidden
+    &__title
+      cursor: pointer
+      height: 100px
+      @include flexbox
+      align-items: center
+      padding-left: 45px
+      padding-right: 135px
+      position: relative
+      font-size: 18px
+      font-weight: 600
+      line-height: 25px
+      &::after
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 25px
+        margin: auto 0
+        width: 44px
+        height: 44px
+        border-radius: 10px
+        background: #fff url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.0001 15.4292L7.05006 11.4792C6.86146 11.297 6.60885 11.1963 6.34666 11.1985C6.08446 11.2008 5.83365 11.306 5.64824 11.4914C5.46283 11.6768 5.35766 11.9276 5.35538 12.1898C5.35311 12.452 5.4539 12.7046 5.63606 12.8932L11.2931 18.5502C11.3857 18.6434 11.4959 18.7173 11.6172 18.7678C11.7385 18.8183 11.8687 18.8442 12.0001 18.8442C12.1315 18.8442 12.2616 18.8183 12.3829 18.7678C12.5042 18.7173 12.6144 18.6434 12.7071 18.5502L18.3641 12.8932C18.5417 12.7038 18.6387 12.4526 18.6345 12.1929C18.6303 11.9333 18.5252 11.6854 18.3415 11.5018C18.1578 11.3182 17.9098 11.2133 17.6501 11.2093C17.3905 11.2053 17.1394 11.3024 16.9501 11.4802L13.0001 15.4302V5.8442C13.0001 5.57899 12.8947 5.32463 12.7072 5.1371C12.5196 4.94956 12.2653 4.8442 12.0001 4.8442C11.7348 4.8442 11.4805 4.94956 11.293 5.1371C11.1054 5.32463 11.0001 5.57899 11.0001 5.8442V15.4292Z' fill='%23EA6CA5'/%3E%3C/svg%3E%0A") no-repeat center
+        transition: .25s
+    &__content
+      max-height: 0px
+      overflow: hidden
+      opacity: 0
+      transition: .4s
+      p
+        padding: 25px 45px
+        border-top: 1px solid rgba(0,0,0,.05)
+        color: rgba(21, 43, 54, 0.75)
+        line-height: 25px
+    &.open
+      .faq-item__title::after
+        transform: rotate(-180deg)
+      .faq-item__content
+        max-height: 600px
+        opacity: 1

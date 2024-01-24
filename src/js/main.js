@@ -54,4 +54,14 @@ document.addEventListener('DOMContentLoaded', function () {
       reviewsGrid.style.maxHeight = '5000px';
     });
   });
+
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(function (item) {
+    const title = item.querySelector('.faq-item__title');
+
+    title.addEventListener('click', function () {
+      item.classList.toggle('open');
+    });
+  });
 });
