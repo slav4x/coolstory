@@ -43,4 +43,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }).mount();
   const totalSlides = promoSlider.length;
   if (totalSlides <= 1) promoSlider.destroy();
+
+  const reviewsGrid = document.querySelector('.reviews-grid');
+  const reviewsBtn = document.querySelector('.btn-reviews');
+  const reviewsItems = document.querySelectorAll('.reviews-item');
+  reviewsBtn.addEventListener('click', () => {
+    reviewsItems.forEach((item) => {
+      item.style.display = 'flex';
+      reviewsBtn.style.display = 'none';
+      reviewsGrid.style.maxHeight = '5000px';
+    });
+  });
 });

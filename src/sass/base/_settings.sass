@@ -57,12 +57,14 @@ input, textarea
   padding: 20px 45px
   border-radius: 999px
   box-shadow: 0px 4px 25px 0px rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset
+  color: #fff
   &-rose
     background: var(--color-rose)
   &-blue
     background: var(--color-blue)
   &-orange
     background: var(--color-orange)
+    color: var(--color-black)
   &-arrow
     &::after
       content: ''
@@ -70,6 +72,16 @@ input, textarea
       width: 10px
       height: 11px
       background: url("data:image/svg+xml,%3Csvg width='10' height='11' viewBox='0 0 10 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.75 1.5C9.75 1.08579 9.41421 0.75 9 0.750001L2.25 0.75C1.83579 0.75 1.5 1.08579 1.5 1.5C1.5 1.91421 1.83579 2.25 2.25 2.25H8.25V8.25C8.25 8.66421 8.58579 9 9 9C9.41421 9 9.75 8.66421 9.75 8.25L9.75 1.5ZM1.53033 10.0303L9.53033 2.03033L8.46967 0.96967L0.46967 8.96967L1.53033 10.0303Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat center
+  &-reviews
+    &::after
+      content: ''
+      display: block
+      width: 20px
+      height: 20px
+      background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.6501 4.34984C14.436 3.13207 12.8619 2.3379 11.1611 2.08503C9.46019 1.83216 7.72312 2.13406 6.20731 2.94598C4.6915 3.75789 3.47764 5.03661 2.74565 6.59259C2.01366 8.14857 1.80251 9.899 2.14349 11.5844C2.48447 13.2698 3.35943 14.8005 4.63868 15.9496C5.91794 17.0987 7.5334 17.805 9.2456 17.9638C10.9578 18.1227 12.6756 17.7256 14.1444 16.8315C15.6133 15.9374 16.7549 14.5938 17.4001 12.9998H15.1801C14.562 14.0915 13.6173 14.9621 12.4788 15.4889C11.3402 16.0158 10.0652 16.1726 8.83294 15.9372C7.60069 15.7018 6.47323 15.086 5.60911 14.1765C4.745 13.2671 4.18769 12.1096 4.01558 10.8669C3.84346 9.62425 4.0652 8.35889 4.64959 7.24878C5.23399 6.13868 6.15165 5.23968 7.27353 4.67821C8.3954 4.11674 9.66505 3.92105 10.9039 4.11865C12.1428 4.31626 13.2886 4.89722 14.1801 5.77984L11.0001 8.99984H18.0001V1.99984L15.6501 4.34984Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat center
+      transition: .4s
+    &:hover::after
+      transform: rotate(360deg)
 
 .title
   font-size: 55px
