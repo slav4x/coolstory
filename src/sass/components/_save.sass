@@ -1,4 +1,18 @@
 .save
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    bottom: -45px
+    left: var(--spacing)
+    right: var(--spacing)
+    max-width: 1390px
+    margin: 0 auto
+    background: #fff
+    z-index: -1
+    border-top-left-radius: var(--border-radius)
+    border-top-right-radius: var(--border-radius)
   &-block
     padding: 80px
     overflow: hidden
