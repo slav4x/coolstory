@@ -99,6 +99,7 @@ const watching = () => {
     server: {
       baseDir: 'app',
     },
+    online: true,
   });
 
   watch('src/**/*.html', parallel(html));
