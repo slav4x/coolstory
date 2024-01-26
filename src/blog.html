@@ -1,0 +1,40 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Блог' %}
+
+{% block content %}
+
+<section class="promo promo-md">
+  <div class="promo-item blue">
+    <div class="container">
+      <img src="img/blog.png" alt="" class="promo-blog">
+      <h2 class="promo-title">Больше, чем<br> просто советы</h2>
+      <h3 class="promo-subtitle"><span>Дорогие родители, не заказывайте альбомы, пока не прочитаете минимум 3 статьи.</span> Мы раскрыли 32(!) вопроса, без которых вы не сможете выбрать лучшего исполнителя.</h3>
+      <div class="promo-time">Время прочтения статьи: от 20 до 80 секунд</div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-page">
+  <div class="container">
+    <div class="blog-grid">
+      {% include 'components/blog-item.html' %}
+      {% include 'components/blog-item.html' %}
+      {% include 'components/blog-item.html' %}
+      {% include 'components/blog-item.html' %}
+      {% include 'components/blog-item.html' %}
+      {% include 'components/blog-item.html' %}
+      {% include 'components/blog-item.html' %}
+      {% include 'components/blog-item.html' %}
+      {% include 'components/blog-item.html' %}
+    </div>
+    <ul class="blog-pagination">
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+    </ul>
+  </div>
+</section>
+
+{% endblock %}
