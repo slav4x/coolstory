@@ -64,4 +64,15 @@ document.addEventListener('DOMContentLoaded', function () {
       item.classList.toggle('open');
     });
   });
+
+  const blogSlider = new Splide('.blog-slider', {
+    type: 'loop',
+    perPage: 3,
+    perMove: 1,
+    gap: '20px',
+    arrowPath:
+      'M9.34315 0.278419L15.7071 6.32784C16.0976 6.69907 16.0976 7.30094 15.7071 7.67216L9.34314 13.7216C8.95262 14.0928 8.31945 14.0928 7.92893 13.7216C7.53841 13.3504 7.53841 12.7485 7.92893 12.3773L12.5858 7.95058L-1.39012e-06 7.95058L-1.05772e-06 6.04943L12.5858 6.04943L7.92893 1.62274C7.53841 1.25151 7.53841 0.649641 7.92893 0.278419C8.31946 -0.0928043 8.95262 -0.0928042 9.34315 0.278419Z',
+  }).mount();
+  const totalBlogSlides = blogSlider.length;
+  if (totalBlogSlides <= 1) blogSlider.destroy();
 });
