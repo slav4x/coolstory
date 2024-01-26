@@ -7,6 +7,8 @@
   color: #fff
   border-radius: var(--border-radius)
   overflow: hidden
+  &-md
+    height: 480px
   &-slider, &-item
     height: 100%
   &-item
@@ -47,9 +49,14 @@
     font-size: 18px
     line-height: 1.4
     font-weight: 400
-    margin-bottom: 40px
+    margin-bottom: 15px
     span
       font-weight: 600
+    &__long
+      max-width: 500px
+  .btn-wrap
+    gap: 15px
+    margin-top: 30px
   .splide
     &__track, &__slide
       height: 100%
