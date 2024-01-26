@@ -1,0 +1,21 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Спасибо' %}
+
+{% block content %}
+
+<section class="promo promo-md">
+  <div class="promo-item rose">
+    <div class="container">
+      <img src="img/thanks.png" alt="" class="promo-thanks">
+      <h2 class="promo-title">Мы приняли<br> вашу заявку</h2>
+      <ul class="promo-list">
+        <li><span>Вы нашли, пожалуй, самую лучшую команду для производства ваших альбомов в «город»</span></li>
+      </ul>
+      <p class="promo-text">С минуту на минуту отправим вам презентацию наших альбомов, а после рассчитаем стоимость изготовления альбомов на ваш «категория группы»</p>
+    </div>
+  </div>
+</section>
+
+{% include 'components/blog.html' %}
+
+{% endblock %}

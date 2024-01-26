@@ -9,6 +9,8 @@
   overflow: hidden
   &-md
     height: 480px
+    .promo-title
+      font-weight: 600
   &-slider, &-item
     height: 100%
   &-item
@@ -20,14 +22,26 @@
     background-repeat: no-repeat
     &.blue
       background-image: url(../img/promo-blue.jpg)
+      .promo-list li::before
+        background-color: var(--color-rose)
     &.rose
       background-image: url(../img/promo-rose.jpg)
+      .promo-list li::before
+        background-color: var(--color-blue)
     &.purple
       background-image: url(../img/promo-purple.jpg)
+      .promo-list li::before
+        background-color: var(--color-orange)
   &-books
     position: absolute
     top: -280px
     right: -390px
+    max-width: initial
+    z-index: -1
+  &-thanks
+    position: absolute
+    top: -90px
+    right: -120px
     max-width: initial
     z-index: -1
   &-title
@@ -54,6 +68,37 @@
       font-weight: 600
     &__long
       max-width: 500px
+  &-text
+    line-height: 25px
+    opacity: 0.65
+    max-width: 410px
+  &-list
+    max-width: 480px
+    line-height: 25px
+    margin-bottom: 25px
+    &:last-child
+      margin-bottom: 0
+    span
+      font-weight: 600
+    b
+      font-weight: 700
+    li
+      margin-top: 15px
+      position: relative
+      padding-left: 35px
+      &:first-child
+        margin-top: 0
+      &::before
+        content: ''
+        position: absolute
+        top: 4px
+        left: 0
+        width: 20px
+        height: 20px
+        border-radius: 100%
+        background-repeat: no-repeat
+        background-position: center
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.8058 7.42857L9.312 10.6794L7.83444 9.09791L6.85703 10.0165L9.24409 12.5714L13.7142 8.41612L12.8058 7.42857Z' fill='white'/%3E%3C/svg%3E%0A")
   .btn-wrap
     gap: 15px
     margin-top: 30px
