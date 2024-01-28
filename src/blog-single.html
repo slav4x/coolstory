@@ -1,0 +1,85 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Страница блога' %}
+
+{% block content %}
+
+<section class="blog-head">
+  <img src="img/blog-item.jpg" alt="">
+  <div class="container">
+    <h2 class="blog-head__title">Когда лучше всего заказывать альбом и почему?</h2>
+    <div class="blog-head__stats">
+      <div class="blog-head__date">01.12.2023</div>
+      <div class="blog-head__view">579 просмотров</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<section class="blog-wrapper">
+  <div class="container">
+    <div class="blog-main">
+      <h1>Heading</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia similique numquam cum fugiat, eius in totam nemo sint veniam repellendus deleniti alias mollitia ea illum neque vitae veritatis distinctio eum?</p>
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia similique numquam cum fugiat, eius in totam nemo sint veniam repellendus deleniti alias mollitia ea illum neque vitae veritatis distinctio eum?</p>
+      <img src="img/blog-item.jpg" alt="">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia similique numquam cum fugiat, eius in totam nemo sint veniam repellendus deleniti alias mollitia ea illum neque vitae veritatis distinctio eum?</p>
+      <h4>Heading</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia similique numquam cum fugiat, eius in totam nemo sint veniam repellendus deleniti alias mollitia ea illum neque vitae veritatis distinctio eum?</p>
+      <h5>Heading</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia similique numquam cum fugiat, eius in totam nemo sint veniam repellendus deleniti alias mollitia ea illum neque vitae veritatis distinctio eum?</p>
+      <h6>Heading</h6>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum cumque esse doloribus id soluta fugit vel dolores. Eligendi impedit distinctio ea molestias, consequatur voluptatem quae amet enim, veniam, cum odio.</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum cumque esse doloribus id soluta fugit vel dolores. Eligendi impedit distinctio ea molestias, consequatur voluptatem quae amet enim, veniam, cum odio.</p>
+      <img src="img/blog-item.jpg" alt="">
+      <ul>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quisquam distinctio tempora neque fuga quo ipsam. Ex sapiente nisi saepe officiis. Magni a illum tempora, inventore iure mollitia culpa atque.</li>
+        <li>Ullam error expedita harum officiis debitis recusandae, minima at voluptas id quae tempore, voluptatem quo magnam a ea commodi quos quod. Harum commodi temporibus placeat accusantium. Possimus esse pariatur aperiam?</li>
+        <li>Molestiae tempora laborum illo in voluptatem vero temporibus ullam nobis voluptates eligendi, asperiores porro recusandae quis incidunt sunt neque officiis minima quidem sed facere? Ipsam ipsa culpa dolores repudiandae beatae.</li>
+        <li>Placeat illum maxime sequi ipsum, cum esse iste modi voluptas incidunt necessitatibus voluptatum deleniti non reprehenderit minima! A, aperiam atque? Laudantium perspiciatis, ratione laborum sunt sint iste vitae neque aliquid.</li>
+        <li>Illo vitae eius reprehenderit nesciunt corrupti harum hic, iste aspernatur facere cumque porro aperiam labore velit veritatis, quod, earum inventore eligendi vero ipsa saepe enim commodi. Ratione illo autem cupiditate?</li>
+      </ul>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum cumque esse doloribus id soluta fugit vel dolores. Eligendi impedit distinctio ea molestias, consequatur voluptatem quae amet enim, veniam, cum odio.</p>
+    </div>
+    <div class="blog-form">
+      456
+    </div>
+  </div>
+</section>
+
+<section class="blog-wrapper">
+  <div class="container">
+    <div class="blog-share">
+      <p>Поделиться</p>
+      <a href="#"><img src="img/svg/wa.svg" alt="" loading="lazy"</a>
+      <a href="#"><img src="img/svg/tg.svg" alt="" loading="lazy"</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrapper">
+
+<section class="blog">
+  <div class="container">
+    <h2 class="title">Другие статьи в тему</h2>
+    <div class="splide blog-slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">{% include 'components/blog-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/blog-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/blog-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/blog-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/blog-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/blog-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/blog-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/blog-item.html' %}</li>
+          <li class="splide__slide">{% include 'components/blog-item.html' %}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

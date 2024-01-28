@@ -127,3 +127,124 @@
         display: block
       &.active a
         color: #152b36
+
+  &-head
+    width: calc(100% - (var(--spacing) * 2))
+    max-width: 1390px
+    height: 480px
+    margin: 0 auto
+    background: rgba(0,0,0,.3)
+    color: #fff
+    border-radius: var(--border-radius)
+    overflow: hidden
+    padding-bottom: 90px
+    @include flexbox
+    align-items: flex-end
+    position: relative
+    .container
+      @include flexbox
+      align-items: flex-end
+    img
+      position: absolute
+      top: -40px
+      left: -40px
+      width: calc(100% + 80px)
+      height: calc(100% + 80px)
+      max-width: initial
+      object-fit: cover
+      object-position: center
+      z-index: -1
+      filter: blur(15px)
+    &__title
+      font-size: 60px
+      font-weight: 600
+      line-height: 1
+      letter-spacing: -0.03em
+      max-width: 880px
+      width: calc(100% - 200px)
+    &__stats
+      max-width: 200px
+      margin-left: auto
+      font-size: 13px
+      line-height: 22px
+      color: rgba(255,255,255,.75)
+      text-align: right
+    &__view
+      margin-top: 10px
+      padding-right: 40px
+      background: url("data:image/svg+xml,%3Csvg width='21' height='16' viewBox='0 0 21 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.75 8C7.75 7.40326 7.98705 6.83097 8.40901 6.40901C8.83097 5.98705 9.40326 5.75 10 5.75C10.5967 5.75 11.169 5.98705 11.591 6.40901C12.0129 6.83097 12.25 7.40326 12.25 8C12.25 8.59674 12.0129 9.16903 11.591 9.59099C11.169 10.0129 10.5967 10.25 10 10.25C9.40326 10.25 8.83097 10.0129 8.40901 9.59099C7.98705 9.16903 7.75 8.59674 7.75 8Z' fill='white' fill-opacity='0.3'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 8C0 9.64 0.425 10.191 1.275 11.296C2.972 13.5 5.818 16 10 16C14.182 16 17.028 13.5 18.725 11.296C19.575 10.192 20 9.639 20 8C20 6.36 19.575 5.809 18.725 4.704C17.028 2.5 14.182 0 10 0C5.818 0 2.972 2.5 1.275 4.704C0.425 5.81 0 6.361 0 8ZM10 4.25C9.00544 4.25 8.05161 4.64509 7.34835 5.34835C6.64509 6.05161 6.25 7.00544 6.25 8C6.25 8.99456 6.64509 9.94839 7.34835 10.6517C8.05161 11.3549 9.00544 11.75 10 11.75C10.9946 11.75 11.9484 11.3549 12.6517 10.6517C13.3549 9.94839 13.75 8.99456 13.75 8C13.75 7.00544 13.3549 6.05161 12.6517 5.34835C11.9484 4.64509 10.9946 4.25 10 4.25Z' fill='white' fill-opacity='0.6'/%3E%3C/svg%3E%0A") no-repeat right center
+    &__date
+      padding-right: 40px
+      background: url("data:image/svg+xml,%3Csvg width='20' height='16' viewBox='0 0 20 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6 0C5.73478 0 5.48043 0.105357 5.29289 0.292893C5.10536 0.48043 5 0.734784 5 1V2H4C3.46957 2 2.96086 2.21071 2.58579 2.58579C2.21071 2.96086 2 3.46957 2 4V14C2 14.5304 2.21071 15.0391 2.58579 15.4142C2.96086 15.7893 3.46957 16 4 16H16C16.5304 16 17.0391 15.7893 17.4142 15.4142C17.7893 15.0391 18 14.5304 18 14V4C18 3.46957 17.7893 2.96086 17.4142 2.58579C17.0391 2.21071 16.5304 2 16 2H15V1C15 0.734784 14.8946 0.48043 14.7071 0.292893C14.5196 0.105357 14.2652 0 14 0C13.7348 0 13.4804 0.105357 13.2929 0.292893C13.1054 0.48043 13 0.734784 13 1V2H7V1C7 0.734784 6.89464 0.48043 6.70711 0.292893C6.51957 0.105357 6.26522 0 6 0V0ZM6 5C5.73478 5 5.48043 5.10536 5.29289 5.29289C5.10536 5.48043 5 5.73478 5 6C5 6.26522 5.10536 6.51957 5.29289 6.70711C5.48043 6.89464 5.73478 7 6 7H14C14.2652 7 14.5196 6.89464 14.7071 6.70711C14.8946 6.51957 15 6.26522 15 6C15 5.73478 14.8946 5.48043 14.7071 5.29289C14.5196 5.10536 14.2652 5 14 5H6Z' fill='white' fill-opacity='0.6'/%3E%3C/svg%3E%0A") no-repeat right center
+
+  &-wrapper
+    width: 100%
+    max-width: 1390px
+    margin: 20px auto 0
+    .container
+      @include flexbox
+      align-items: flex-start
+      max-width: 1270px
+  &-main
+    background: #fff
+    padding: 40px
+    width: calc(100% - 420px - 20px)
+    margin-right: auto
+    border-radius: var(--border-radius)
+    @include flexbox
+    align-items: flex-start
+    flex-direction: column
+    gap: 20px
+    line-height: 1.5
+    color: rgba(50, 50, 50, 0.65)
+    h1, h2, h3, h4, h5, h6
+      margin-top: 30px
+      margin-bottom: 0
+      padding: 0
+      font-weight: 600
+      color: rgba(50, 50, 50, 1)
+      &:first-child
+        margin-top: 0
+    img
+      margin: 10px 0
+      border-radius: var(--border-radius)
+      &:last-child
+        margin-bottom: 0
+      &:first-child
+        margin-top: 0
+    h1
+      font-size: 2em
+    ul
+      li
+        margin-top: 20px
+        padding-left: 24px
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          top: 11px
+          left: 0
+          width: 12px
+          height: 2px
+          background: var(--color-blue)
+        &:first-child
+          margin-top: 0
+  &-share
+    @include flexbox
+    align-items: center
+    margin-top: 20px
+    color: rgba(50, 50, 50, 0.65)
+    gap: 10px
+    p
+      margin-right: 10px
+    a
+      display: block
+    img
+      width: 40px
+  &-form
+    width: 420px
+    background: #fff
+    padding: 40px
+    border-radius: var(--border-radius)
+    position: sticky
+    top: 0
