@@ -188,7 +188,7 @@
   &-main
     background: #fff
     padding: 40px
-    width: calc(100% - 420px - 20px)
+    width: calc(100% - 400px - 20px)
     margin-right: auto
     border-radius: var(--border-radius)
     @include flexbox
@@ -241,10 +241,74 @@
       display: block
     img
       width: 40px
-  &-form
-    width: 420px
-    background: #fff
-    padding: 40px
-    border-radius: var(--border-radius)
+  &-sidebar
+    width: 400px
     position: sticky
-    top: 0
+    top: -100px
+    &__img
+      margin: 0 auto
+      filter: drop-shadow(-25px 55px 70px rgba(0, 0, 0, 0.15))
+      z-index: -1
+  &-form
+    background: #fff
+    border-radius: var(--border-radius)
+    padding: 35px 25px 25px
+    position: relative
+    z-index: 5
+    h3
+      text-align: center
+      font-size: 30px
+      font-weight: 600
+      margin: 0 auto
+    h4
+      text-align: center
+      font-size: 12px
+      line-height: 18px
+      text-align: center
+      max-width: 180px
+      margin: 15px auto 30px
+      font-weight: 400
+    form
+      @include flexbox
+      align-items: center
+      justify-content: center
+      gap: 10px
+    span
+      font-size: 12px
+      color: rgba(21, 43, 54, 0.75)
+      text-align: center
+      max-width: 220px
+      line-height: 18px
+      display: block
+      a
+        color: var(--color-blue)
+        font-weight: 600
+        border-bottom: 1px solid var(--color-blue)
+    label
+      display: block
+      width: 100%
+      span
+        margin: 0 auto 10px
+    .btn
+      max-width: 100%
+      width: 100%
+      justify-content: center
+      padding-left: 0
+      padding-right: 0
+  &-call
+    padding: 17px 25px
+    border-radius: 15px
+    @include flexbox
+    align-items: flex-start
+    gap: 10px
+    color: #fff
+    background: #3AABE2 url(../img/svg/wa-call.svg) no-repeat bottom right 10px
+    margin-top: 20px
+    p
+      font-size: 15px
+      line-height: 18px
+      opacity: 0.65
+    a
+      font-size: 27px
+      font-weight: 600
+      line-height: 30px
