@@ -95,4 +95,129 @@ document.addEventListener('DOMContentLoaded', function () {
     const totalBlogSlides = blogSlider.length;
     if (totalBlogSlides <= 1) blogSlider.destroy();
   }
+
+  const themes = document.querySelectorAll('.theme');
+  themes.forEach((theme) => {
+    theme.querySelectorAll('.theme-tabs li').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        theme.querySelectorAll('.theme-tabs li').forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const subtabId = tab.getAttribute('data-subtab');
+        if (subtabId) {
+          theme.querySelectorAll('.theme-subtabs').forEach((subtab) => subtab.classList.remove('show'));
+          theme.querySelector(`.theme-subtabs[data-subtab="${subtabId}"]`).classList.add('show');
+
+          theme.querySelectorAll('.theme-subtabs li').forEach((li) => li.classList.remove('active'));
+          theme.querySelector(`.theme-subtabs.show li:first-child`).classList.add('active');
+
+          const tabId = theme.querySelector(`.theme-subtabs.show li:first-child`).getAttribute('data-tab');
+          theme.querySelectorAll('.theme-tab').forEach((tab) => tab.classList.remove('active'));
+          theme.querySelectorAll(`.theme-tab[data-tab="${tabId}"]`).forEach((item) => {
+            item.classList.add('active');
+          });
+        }
+
+        const tabId = tab.getAttribute('data-tab');
+        if (tabId) {
+          theme.querySelectorAll('.theme-tab').forEach((tab) => tab.classList.remove('active'));
+          theme.querySelectorAll(`.theme-tab[data-tab="${tabId}"]`).forEach((item) => {
+            item.classList.add('active');
+          });
+        }
+      });
+    });
+
+    theme.querySelectorAll('.theme-subtabs li').forEach((li) => {
+      li.addEventListener('click', () => {
+        theme.querySelectorAll('.theme-subtabs li').forEach((l) => l.classList.remove('active'));
+        li.classList.add('active');
+
+        const tabId = li.getAttribute('data-tab');
+        theme.querySelectorAll('.theme-tab').forEach((tab) => tab.classList.remove('active'));
+        theme.querySelectorAll(`.theme-tab[data-tab="${tabId}"]`).forEach((item) => {
+          item.classList.add('active');
+        });
+      });
+    });
+  });
+
+  // var main = new Splide('.theme-gallery__main', {
+  //   type: 'loop',
+  //   rewind: true,
+  //   pagination: false,
+  //   arrows: false,
+  // });
+
+  // var thumbnails = new Splide('.theme-gallery__thumbnails', {
+  //   type: 'loop',
+  //   perPage: 4,
+  //   perMove: 1,
+  //   gap: 15,
+  //   rewind: true,
+  //   pagination: false,
+  //   arrowPath:
+  //     'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
+  // });
+
+  // main.sync(thumbnails);
+  // main.mount();
+  // thumbnails.mount();
+
+  // var elms = document.getElementsByClassName( 'splide' );
+
+  // for ( var i = 0; i < elms.length; i++ ) {
+  //   new Splide( elms[ i ] ).mount();
+  // }
+
+  const themeGalleryMain = document.getElementsByClassName('theme-gallery__main');
+  const themeGalleryThumbnails = document.getElementsByClassName('theme-gallery__thumbnails');
+  for (let i = 0; i < themeGalleryMain.length; i++) {
+    const m = new Splide(themeGalleryMain[i], {
+      type: 'loop',
+      rewind: true,
+      pagination: false,
+      arrows: false,
+    });
+
+    const t = new Splide(themeGalleryThumbnails[i], {
+      type: 'loop',
+      perPage: 4,
+      perMove: 1,
+      gap: 15,
+      rewind: true,
+      pagination: false,
+      arrowPath:
+        'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
+    });
+
+    t.mount();
+    m.sync(t);
+    m.mount();
+  }
+
+  // const themeGallery = document.querySelectorAll('.theme-gallery');
+  // themeGallery.forEach((gallery, i) => {
+  //   const main = new Splide('.theme-gallery__main', {
+  // type: 'loop',
+  // rewind: true,
+  // pagination: false,
+  // arrows: false,
+  //   });
+
+  //   const thumbnails = new Splide('.theme-gallery__thumbnails', {
+  //     type: 'loop',
+  //     perPage: 4,
+  //     perMove: 1,
+  //     gap: 15,
+  //     rewind: true,
+  //     pagination: false,
+  //     arrowPath:
+  //       'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
+  //   });
+
+  //   main.sync(thumbnails);
+  //   main.mount();
+  //   thumbnails.mount();
+  // });
 });

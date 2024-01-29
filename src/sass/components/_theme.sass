@@ -1,0 +1,164 @@
+.theme
+  padding: var(--gap) 0
+  & + .whatsapp
+    margin-top: 0
+  .container
+    @include flexbox
+    align-items: flex-start
+  &-main
+    width: calc(100% - 500px)
+    &__text
+      max-width: 560px
+      opacity: 0.75
+      margin-top: 20px
+      line-height: 25px
+  &-sidebar
+    width: 460px
+    margin-left: auto
+  &-tabs
+    @include flexbox
+    align-items: flex-start
+    gap: 10px
+    li
+      flex: 1
+      border: 2px solid #fff
+      padding: 11px 18px 15px
+      border-radius: 15px
+      position: relative
+      box-shadow: 0px 4px 25px 0px rgba(255, 255, 255, 0.25) inset
+      transition: .25s
+      cursor: pointer
+      &::after
+        content: ''
+        position: absolute
+        bottom: -7px
+        right: 30px
+        width: 36px
+        height: 11px
+        background: url("data:image/svg+xml,%3Csvg width='26' height='11' viewBox='0 0 26 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.9142 9.72534C11.9296 10.3459 12.4373 10.6561 13 10.6561C13.5627 10.6561 14.0704 10.3459 15.0858 9.72534L18.8694 7.41313C23.7747 4.41545 26.2274 2.9166 25.8171 1.4583C25.4067 0 22.5324 0 16.7836 0H9.21637C3.46763 0 0.593259 0 0.182942 1.4583C-0.227374 2.9166 2.22527 4.41545 7.13057 7.41313L10.9142 9.72534Z' fill='%2382C971'/%3E%3C/svg%3E%0A") no-repeat center
+        opacity: 0
+        transition: .25s
+      b
+        display: block
+        font-size: 17px
+        font-weight: 600
+        line-height: 25px
+        color: rgba(21, 43, 54, 0.35)
+        transition: .25s
+      p
+        font-size: 12px
+        line-height: 15px
+        color: rgba(21, 43, 54, 0.25)
+        transition: .25s
+        font-weight: 500
+      &.active
+        background: #7dc76b
+        border-color: #F9F9F9
+        &::after
+          opacity: 1
+        b
+          color: #fff
+        p
+          color: rgba(255,255,255,.75)
+  &-subtabs
+    display: none
+    flex-wrap: wrap
+    align-items: flex-start
+    gap: 10px
+    margin-top: 15px
+    &.show
+      display: flex
+    li
+      flex: 1
+      border: 2px solid #fff
+      border-radius: 15px
+      box-shadow: 0px 4px 25px 0px rgba(255, 255, 255, 0.25) inset
+      transition: .25s
+      cursor: pointer
+      height: 60px
+      @include flexbox
+      align-items: center
+      justify-content: center
+      font-weight: 600
+      color: rgba(21, 43, 54, 0.35)
+      &.active
+        background: #7dc76b
+        border-color: #F9F9F9
+        color: #fff
+
+  &-tab
+    display: none
+    &.active
+      display: block
+
+  &-info
+    margin-top: 15px
+    background: #fff
+    padding: 40px
+    border-radius: var(--border-radius)
+    h4
+      font-size: 20px
+      font-weight: 600
+      line-height: 25px
+      margin-bottom: 20px
+    ul
+      font-size: 15px
+      line-height: 25px
+      color: rgba(21, 43, 54, 0.75)
+      font-weight: 500
+      li
+        position: relative
+        padding-left: 20px
+        span
+          color: rgba(21, 43, 54, 0.25)
+        &::before
+          content: ''
+          position: absolute
+          top: 10px
+          left: 0
+          width: 6px
+          height: 6px
+          border-radius: 100%
+          background: var(--color-blue)
+    .btn-wrap
+      gap: 10px
+      margin-top: 20px
+      .btn
+        max-width: 100%
+        width: 100%
+        justify-content: center
+        padding-left: 0
+        padding-right: 0
+
+  &-gallery
+    margin-top: 35px
+    &__main
+      border-radius: var(--border-radius)
+      overflow: hidden
+      img
+        width: 100%
+        height: 400px
+        object-fit: cover
+        object-position: center
+    &__thumbnails
+      margin-top: 15px
+      img
+        width: 100%
+        height: 90px
+        border-radius: 10px
+        object-fit: cover
+        object-position: center
+      .splide__arrow
+        width: 55px
+        height: 55px
+        opacity: 1 !important
+        background: #fff
+        box-shadow: 1px 1px 3px 0px rgba(186, 186, 186, 0.10), 3px 4px 5px 0px rgba(186, 186, 186, 0.09), 7px 10px 7px 0px rgba(186, 186, 186, 0.05), 13px 18px 9px 0px rgba(186, 186, 186, 0.01), 20px 27px 9px 0px rgba(186, 186, 186, 0.00)
+        svg
+          fill: var(--color-blue)
+          width: 16px
+          height: 17px
+        &--next
+          right: -20px
+        &--prev
+          left: -20px

@@ -1,0 +1,787 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = '9-11 классы' %}
+
+{% block content %}
+
+<section class="promo promo-template">
+  <div class="splide promo-slider">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide promo-item rose">
+          <div class="container">
+            <img src="img/promo-rose-books.png" alt="" class="promo-books">
+            <h2 class="promo-title"><span>Выпускные альбомы</span><br> для 9-11 классов</h2>
+            <ul class="promo-list">
+              <li><span>Более 30 вариантов дизайна альбомов.</span><br> А если не найдете подходящий, то разработаем индивидуально по вашему примеру (и это бесплатно)</li>
+              <li><span>4 формата альбомов:</span> папка, трюмо, разворотная книга, многостраничный альбом.</li>
+              <li><span>С нами выгоднее, чем с конкурентами!</span><br> Лучшее соотношение цена-качество.</li>
+            </ul>
+            <div class="btn-wrap"><a href="#" class="btn btn-blue btn-arrow"><p>Получить расчет стоимости на класс</p></a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="design">
+  <div class="container">
+    <div class="design-block">
+      <h2 class="title-md">Выберите готовый дизайн альбомов из 37 вариантов</h2>
+      <h3 class="subtitle">Или закажите индивидуальную разработку (это бесплатно)</h3>
+      <div class="design-row">
+        <div class="design-slider"></div>
+        <div class="design-main"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set wa_bg = 'blue' %}
+{% set wa_btn = 'rose' %}
+{% include 'components/whatsapp.html' %}
+
+<section class="theme">
+  <div class="container">
+    <div class="theme-main">
+      <h2 class="title">Трюмо</h2>
+      <p class="theme-main__text">Простой и практичный вариант выпускного фотоальбома, представляет собой папку, оформленную со всех сторон и раскладывающуюся на три равные части</p>
+      <div class="theme-tab active" data-tab="1">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="2">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="theme-sidebar">
+      <ul class="theme-tabs">
+        <li data-tab="1" class="active"><b>Стандартный</b><p>Одинаковый подбор фотографий во всех альбомах</p></li>
+        <li data-tab="2"><b>Персональный</b><p>Индивидуальный подбор фотографий во всех альбомах</p></li>
+      </ul>
+      <div class="theme-tab active" data-tab="1">
+        <div class="theme-info">
+          <h4>Что входит в стоимость?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="2">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 2?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set wa_bg = 'blue' %}
+{% set wa_btn = 'rose' %}
+{% include 'components/whatsapp.html' %}
+
+<section class="theme">
+  <div class="container">
+    <div class="theme-main">
+      <h2 class="title">Разворотная книга</h2>
+      <p class="theme-main__text">Обложка фотоальбома сделана из 2-ух мм картона, каждая страница склеена из двух листов высококлассной мелованной бумаги и заламинирована</p>
+      <div class="theme-tab active" data-tab="3">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="4">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="5">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="6">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="7">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="theme-sidebar">
+      <ul class="theme-tabs">
+        <li data-subtab="1" class="active"><b>Стандартный</b><p>Одинаковый подбор фотографий во всех альбомах</p></li>
+        <li data-subtab="2"><b>Персональный</b><p>Индивидуальный подбор фотографий во всех альбомах</p></li>
+      </ul>
+      <ul class="theme-subtabs show" data-subtab="1">
+        <li data-tab="3" class="active">6 страниц</li>
+        <li data-tab="4">10 страниц</li>
+        <li data-tab="5">30 страниц</li>
+      </ul>
+      <ul class="theme-subtabs" data-subtab="2">
+        <li data-tab="6">6 страниц</li>
+        <li data-tab="7">10 страниц</li>
+      </ul>
+      <div class="theme-tab active" data-tab="3">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 3?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="4">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 4?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="5">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 5?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="6">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 6?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="7">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 7?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set wa_bg = 'blue' %}
+{% set wa_btn = 'rose' %}
+{% include 'components/whatsapp.html' %}
+
+<section class="theme">
+  <div class="container">
+    <div class="theme-main">
+      <h2 class="title">Разворотная книга</h2>
+      <p class="theme-main__text">Обложка фотоальбома сделана из 2-ух мм картона, каждая страница склеена из двух листов высококлассной мелованной бумаги и заламинирована</p>
+      <div class="theme-tab active" data-tab="3">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="4">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="5">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="6">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="7">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="8">
+        <div class="theme-gallery">
+          <div class="splide theme-gallery__main">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="splide theme-gallery__thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+                <li class="splide__slide"><img src="img/theme-1.jpg" alt="" loading="lazy"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="theme-sidebar">
+      <ul class="theme-tabs">
+        <li data-subtab="1" class="active"><b>Стандартный</b><p>Одинаковый подбор фотографий во всех альбомах</p></li>
+        <li data-subtab="2"><b>Персональный</b><p>Индивидуальный подбор фотографий во всех альбомах</p></li>
+      </ul>
+      <ul class="theme-subtabs show" data-subtab="1">
+        <li data-tab="3" class="active">24-26 страниц</li>
+        <li data-tab="4">28-46 страниц</li>
+        <li data-tab="5">32-50 страниц</li>
+      </ul>
+      <ul class="theme-subtabs" data-subtab="2">
+        <li data-tab="6">24-26 страниц</li>
+        <li data-tab="7">28-46 страниц</li>
+        <li data-tab="8">32-50 страниц</li>
+      </ul>
+      <div class="theme-tab active" data-tab="3">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 3?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="4">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 4?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="5">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 5?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="6">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 6?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="7">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 7?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-tab" data-tab="8">
+        <div class="theme-info">
+          <h4>Что входит в стоимость 8?</h4>
+          <ul>
+            <li>1 фотосессия <span>(1-2 часа)</span></li>
+            <li>150 фотографий <span>(все в обработке)</span></li>
+            <li>1 персональное фото в альбоме</li>
+            <li>1 дизайн обложек <span>(на класс/группу)</span></li>
+            <li>Фото на обложке <span>(каждый самостоятельно выбирает с фото или без фото)</span></li>
+            <li>Выбор портретов <span>(все портреты отправляем на выбор родителям)</span></li>
+            <li>Снимаем всех выпускников <span>(даже тех, кто не берет альбом)</span></li>
+            <li>Снимаем всех педагогов <span>(по вашему желанию)</span></li>
+            <li>Макеты согласовываем с родителями <span>(3 этапа корректировок)</span></li>
+            <li>Фотографии в электронном виде <span>(бесплатно по готовности альбомов)</span></li>
+            <li>Досъем в студии <span>(бесплатно)</span></li>
+            <li>Персональный менеджер <span>(консультация на всех этапах)</span></li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-outline btn-arrow"><p>Подробное описание и видеоразбор</p></a>
+            <a href="#" class="btn btn-blue"><p>Узнать цену на класс</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set wa_bg = 'blue' %}
+{% set wa_btn = 'rose' %}
+{% include 'components/whatsapp.html' %}
+
+{% include 'components/reviews.html' %}
+
+{% include 'components/blog.html' %}
+
+{% endblock %}
