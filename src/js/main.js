@@ -9,6 +9,12 @@ const viewportFix = (width) => {
 viewportFix(420);
 
 document.addEventListener('DOMContentLoaded', function () {
+  Fancybox.bind('[data-fancybox]', {
+    dragToClose: false,
+    autoFocus: false,
+    placeFocusBack: false,
+  });
+
   const maskOptions = {
     mask: '+7 (000) 000-00-00',
     onFocus: function () {
@@ -186,4 +192,16 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector(`.about-design__item[data-id="${tabId}"]`).classList.add('active');
     });
   });
+
+  const aboutMore = document.querySelector('.about-item__more');
+  const aboutPhotos = document.querySelectorAll('.about-hide');
+  if (aboutMore) {
+    aboutMore.addEventListener('click', () => {
+      aboutMore.style.display = 'none';
+
+      aboutPhotos.forEach((item) => {
+        item.classList.remove('about-hide');
+      });
+    });
+  }
 });
