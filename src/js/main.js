@@ -91,6 +91,14 @@ document.addEventListener('DOMContentLoaded', function () {
       gap: '20px',
       arrowPath:
         'M9.34315 0.278419L15.7071 6.32784C16.0976 6.69907 16.0976 7.30094 15.7071 7.67216L9.34314 13.7216C8.95262 14.0928 8.31945 14.0928 7.92893 13.7216C7.53841 13.3504 7.53841 12.7485 7.92893 12.3773L12.5858 7.95058L-1.39012e-06 7.95058L-1.05772e-06 6.04943L12.5858 6.04943L7.92893 1.62274C7.53841 1.25151 7.53841 0.649641 7.92893 0.278419C8.31946 -0.0928043 8.95262 -0.0928042 9.34315 0.278419Z',
+      breakpoints: {
+        1024: {
+          perPage: 2,
+        },
+        475: {
+          perPage: 1,
+        },
+      },
     }).mount();
     const totalBlogSlides = blogSlider.length;
     if (totalBlogSlides <= 1) blogSlider.destroy();
@@ -142,34 +150,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // var main = new Splide('.theme-gallery__main', {
-  //   type: 'loop',
-  //   rewind: true,
-  //   pagination: false,
-  //   arrows: false,
-  // });
-
-  // var thumbnails = new Splide('.theme-gallery__thumbnails', {
-  //   type: 'loop',
-  //   perPage: 4,
-  //   perMove: 1,
-  //   gap: 15,
-  //   rewind: true,
-  //   pagination: false,
-  //   arrowPath:
-  //     'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
-  // });
-
-  // main.sync(thumbnails);
-  // main.mount();
-  // thumbnails.mount();
-
-  // var elms = document.getElementsByClassName( 'splide' );
-
-  // for ( var i = 0; i < elms.length; i++ ) {
-  //   new Splide( elms[ i ] ).mount();
-  // }
-
   const themeGalleryMain = document.getElementsByClassName('theme-gallery__main');
   const themeGalleryThumbnails = document.getElementsByClassName('theme-gallery__thumbnails');
   for (let i = 0; i < themeGalleryMain.length; i++) {
@@ -196,28 +176,14 @@ document.addEventListener('DOMContentLoaded', function () {
     m.mount();
   }
 
-  // const themeGallery = document.querySelectorAll('.theme-gallery');
-  // themeGallery.forEach((gallery, i) => {
-  //   const main = new Splide('.theme-gallery__main', {
-  // type: 'loop',
-  // rewind: true,
-  // pagination: false,
-  // arrows: false,
-  //   });
+  document.querySelectorAll('.about-design__tabs li').forEach((tab) => {
+    tab.addEventListener('click', function () {
+      const tabId = tab.getAttribute('data-id');
+      document.querySelectorAll('.about-design__tabs li').forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
 
-  //   const thumbnails = new Splide('.theme-gallery__thumbnails', {
-  //     type: 'loop',
-  //     perPage: 4,
-  //     perMove: 1,
-  //     gap: 15,
-  //     rewind: true,
-  //     pagination: false,
-  //     arrowPath:
-  //       'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
-  //   });
-
-  //   main.sync(thumbnails);
-  //   main.mount();
-  //   thumbnails.mount();
-  // });
+      document.querySelectorAll('.about-design__item').forEach((tab) => tab.classList.remove('active'));
+      document.querySelector(`.about-design__item[data-id="${tabId}"]`).classList.add('active');
+    });
+  });
 });

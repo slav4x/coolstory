@@ -1,0 +1,92 @@
+@media(max-width: 1190px)
+  :root
+    --spacing: 15px
+
+  .container
+    max-width: 1024px
+
+  .promo
+    .splide
+      &__pagination,
+      &__arrows
+        width: calc(1024px - var(--spacing) * 2)
+        max-width: 100%
+        left: 0
+        right: 0
+        padding: 0 var(--spacing)
+        padding-left: 20px
+
+  .header-social
+    display: none
+  .header-phone
+    margin-left: 0
+  .header-burger
+    margin-left: 20px
+
+  .header-city__popup,
+  .footer-city__popup
+    left: 0
+    padding: 30px 30px 15px
+    gap: 30px
+    font-size: 16px
+    li
+      margin-bottom: 15px
+
+  .promo-books
+    right: -590px
+
+  .about-item
+    padding: 25px !important
+  .about-item__more
+    margin-top: 5px
+  .about-quote__text
+    padding: 20px
+  .about-item-md .about-item__text
+    padding: 0 0 20px
+  .about-item__title
+    font-size: 36px
+
+  .albums
+    padding-top: 300px
+  .albums-block
+    padding: 40px 10px 25px
+  .albums-grid
+    margin-top: 30px
+    gap: 10px
+  .albums-item
+    padding: 30px 20px 20px
+    width: calc((100% - 20px) / 3)
+  .albums-big
+    width: 900px
+
+  .team-grid
+    gap: 10px
+  .team-item
+    width: calc((100% - 20px) / 3)
+    padding: 30px
+  .team-item:nth-child(4)
+    width: calc(58% - 10px)
+  .team-item__photo
+    object-position: top 0px right -40px
+
+  .save-block
+    padding: 80px 40px
+  .save-block__docs
+    right: -260px
+
+  .footer-dev
+    margin-left: 35px
+
+  .promo-blog, .promo-thanks
+    right: -240px
+
+  .text
+    padding: 60px 25px
+
+  .promo-template .promo-books
+    right: -640px
+
+  .promo-404
+    top: -110px
+    right: -200px
+    width: 800px

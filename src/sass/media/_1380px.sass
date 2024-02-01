@@ -1,0 +1,26 @@
+@media(max-width: 1380px)
+  .promo
+    .splide
+      &__arrows
+        bottom: 23px
+        left: var(--spacing)
+        right: var(--spacing)
+        max-width: 1140px
+        margin: 0 auto
+        padding: 0 5px
+        -webkit-box-pack: start
+        -ms-flex-pack: start
+        justify-content: flex-start
+        gap: 15px
+        position: absolute
+        @include flexbox
+        align-items: center
+        justify-content: flex-end
+      &__arrow
+        position: relative
+        top: 0
+        transform: none
+        &--prev
+          left: 0
+        &--next
+          right: 0
