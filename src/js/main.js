@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const cityListFooter = document.querySelector('.footer-city__popup');
   toggleShow(cityActiveFooter, cityListFooter);
 
-  if (document.querySelector('.promo-slider')) {
-    const promoSlider = new Splide('.promo-slider', {
+  if (document.querySelector('.promo-slider.splide')) {
+    const promoSlider = new Splide('.promo-slider.splide', {
       type: 'loop',
       arrowPath:
         'M15.7071 7.29289C16.0976 7.68342 16.0976 8.31658 15.7071 8.70711L9.34315 15.0711C8.95262 15.4616 8.31946 15.4616 7.92893 15.0711C7.53841 14.6805 7.53841 14.0474 7.92893 13.6569L13.5858 8L7.92893 2.34315C7.53841 1.95262 7.53841 1.31946 7.92893 0.928933C8.31946 0.538409 8.95262 0.538409 9.34315 0.928933L15.7071 7.29289ZM8.74228e-08 7L15 7L15 9L-8.74228e-08 9L8.74228e-08 7Z',
@@ -202,6 +202,61 @@ document.addEventListener('DOMContentLoaded', function () {
       aboutPhotos.forEach((item) => {
         item.classList.remove('about-hide');
       });
+    });
+  }
+
+  const designSlider = document.querySelector('.design-slider');
+  if (designSlider) {
+    const designSliderMain = new Splide('.design-slider__main', {
+      type: 'loop',
+      rewind: true,
+      pagination: false,
+      arrows: false,
+    });
+
+    const designSliderThumbnails = new Splide('.design-slider__thumbnails', {
+      type: 'loop',
+      perPage: 2,
+      perMove: 1,
+      gap: 15,
+      rewind: true,
+      pagination: false,
+      arrowPath:
+        'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
+    });
+
+    designSliderThumbnails.mount();
+    designSliderMain.sync(designSliderThumbnails);
+    designSliderMain.mount();
+
+    designSliderMain.on('move', function (newIndex) {
+      const items = document.querySelectorAll('.design-main__item');
+      items.forEach((item, index) => {
+        if (index === newIndex) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    });
+
+    const mainItems = document.querySelectorAll('.design-main__item');
+    mainItems.forEach((item, index) => {
+      item.addEventListener('click', function () {
+        designSliderMain.go(index);
+      });
+    });
+  }
+
+  const designMore = document.querySelector('.design-main__more');
+  const designItems = document.querySelectorAll('.design-main__item');
+
+  if (designMore) {
+    designMore.addEventListener('click', () => {
+      designItems.forEach((item) => {
+        item.style.display = 'block';
+      });
+      designMore.style.display = 'none';
     });
   }
 });
