@@ -175,6 +175,11 @@ document.addEventListener('DOMContentLoaded', function () {
       pagination: false,
       arrowPath:
         'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
+      breakpoints: {
+        1024: {
+          gap: 8,
+        },
+      },
     });
 
     t.mount();
@@ -257,6 +262,15 @@ document.addEventListener('DOMContentLoaded', function () {
         item.style.display = 'block';
       });
       designMore.style.display = 'none';
+    });
+  }
+
+  if (window.innerWidth > 1024) {
+    const sidebar = new StickySidebar('.blog-sidebar', {
+      containerSelector: '.blog-wrapper',
+      innerWrapperSelector: '.sidebar__inner',
+      topSpacing: 0,
+      bottomSpacing: 20,
     });
   }
 });
