@@ -24,7 +24,7 @@
     font-size: 48px
   .promo-subtitle
     font-size: 15px
-    max-width: 350px
+    max-width: 325px
 
   .about-item:nth-child(1)
     .about-item__col
@@ -100,7 +100,20 @@
     font-size: 30px
 
   .promo
-    height: 700px
+    height: 620px
+    .btn-wrap
+      width: 100%
+      justify-content: center
+      .btn
+        width: calc(100% - 20px)
+        // max-width: 350px
+        font-size: 18px
+        line-height: 25px
+        justify-content: center
+        padding: 20px
+        text-align: center
+        p
+          width: 170px
     &-item
       padding: 40px 0
       .btn-wrap
@@ -111,6 +124,10 @@
       align-items: center
       text-align: center
       flex-direction: column
+    &-template
+      .btn-wrap .btn
+        p
+          width: 220px
   .promo .splide__pagination
     display: none
   .promo-title
@@ -125,6 +142,11 @@
     left: 50%
     right: 0
     transform: translateX(-50%)
+    &.pc
+      display: none
+    &.mob
+      display: block
+      bottom: -170px
   .promo .splide__arrows
     justify-content: space-between
     padding: 0 25px
@@ -373,9 +395,18 @@
       text-align: left
       align-items: flex-start
     .promo-books
-      width: 600px
+      width: 800px
+      bottom: -120px
+    .promo-item
+      padding-left: 10px
+      padding-right: 10px
+    .promo-title
+      font-size: 34px
+    .btn
+      width: 100% !important
   .promo-list
     font-size: 15px
+    line-height: 20px
 
   .theme-subtabs li
     font-size: 14px
@@ -538,6 +569,8 @@
 
   .design-block
     padding: 40px 30px
+    background: transparent
+    border-radius: 0
     .title-md
       margin-bottom: 20px
     .subtitle
@@ -616,3 +649,78 @@
     top: 90px
     transform: translateX(-50%)
     margin-left: 20px
+
+  .design-main__grid
+    background: #fff
+    padding: 20px 20px 60px
+    border-radius: 25px
+    gap: 15px 20px
+    overflow-x: visible
+    height: 290px
+    align-content: flex-start
+    flex-wrap: nowrap
+
+  .design-main__more
+    width: 20px
+    font-size: 2px
+    opacity: 0
+  .design-main__grid a
+    width: 68px
+    flex: 0 0 auto
+  .design-slider__thumbnails .splide__arrow--next
+    right: -70px
+  .design-slider__thumbnails .splide__arrow--prev
+    left: -70px
+  .design-main__group
+    display: flex !important
+  .simplebar-content
+    @include flexbox
+    align-items: flex-start
+    gap: 15px 20px
+    flex-wrap: nowrap
+    height: 100%
+  .simplebar-scrollbar::before
+    background-color: var(--color-blue)
+    opacity: 1 !important
+  .simplebar-content:before, .simplebar-content:after
+    width: 100%
+    display: none
+  .simplebar-track.simplebar-horizontal
+    left: 20px
+    right: 20px
+    bottom: 20px
+    height: 20px
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      height: 4px
+      background: #F5F5F5
+      border-radius: 99px
+      z-index: -1
+      margin: auto 0
+
+  .promo-404-main
+    .btn-wrap
+      .btn
+        font-size: 15px
+        width: 100%
+        p
+          width: auto
+  .promo-404
+    &.pc
+      display: none
+    &.mob
+      display: block
+      width: initial
+      margin: 0
+      top: 75px
+      width: 720px
+
+.header-city span
+  width: 10px
+  height: 10px
+  background-size: cover

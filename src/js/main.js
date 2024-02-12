@@ -254,23 +254,29 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const designMore = document.querySelector('.design-main__more');
-  const designItems = document.querySelectorAll('.design-main__item');
+  const designItems = document.querySelectorAll('.design-main__group');
 
   if (designMore) {
     designMore.addEventListener('click', () => {
       designItems.forEach((item) => {
-        item.style.display = 'block';
+        item.style.display = 'flex';
       });
       designMore.style.display = 'none';
     });
   }
 
-  if (window.innerWidth > 1024) {
+  if (window.innerWidth > 1024 && document.querySelector('.blog-sidebar')) {
     const sidebar = new StickySidebar('.blog-sidebar', {
       containerSelector: '.blog-wrapper',
       innerWrapperSelector: '.sidebar__inner',
       topSpacing: 0,
       bottomSpacing: 20,
+    });
+  }
+
+  if (window.innerWidth < 1024) {
+    new SimpleBar(document.querySelector('.design-main__grid'), {
+      forceVisible: 'x',
     });
   }
 });
