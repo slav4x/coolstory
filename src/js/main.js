@@ -198,17 +198,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  const aboutMore = document.querySelector('.about-item__more');
-  const aboutPhotos = document.querySelectorAll('.about-hide');
-  if (aboutMore) {
-    aboutMore.addEventListener('click', () => {
-      aboutMore.style.display = 'none';
+  const aboutPhotos = document.querySelector('.about-wrapper');
+  const aboutBtn = document.querySelector('.about-item__more a');
+  aboutBtn.addEventListener('click', function () {
+    this.textContent = this.textContent === 'Посмотреть больше примеров фото' ? 'Скрыть примеры фото' : 'Посмотреть больше примеров фото';
 
-      aboutPhotos.forEach((item) => {
-        item.classList.remove('about-hide');
-      });
-    });
-  }
+    aboutPhotos.classList.toggle('show');
+  });
 
   const designSlider = document.querySelector('.design-slider');
   if (designSlider) {
@@ -274,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  if (window.innerWidth < 1024) {
+  if (window.innerWidth < 1024 && document.querySelector('.design-main__grid')) {
     new SimpleBar(document.querySelector('.design-main__grid'), {
       forceVisible: 'x',
     });

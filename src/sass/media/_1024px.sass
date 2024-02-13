@@ -525,47 +525,62 @@
 
   .about-photo
     --photo-gap: 10px
-    &-v1 a
-      height: 100px !important
-      &:nth-child(3),
-      &:nth-child(4)
+    .a
+      margin: 0
+      a
         height: 100px !important
-    &-v2 div
-      &:nth-child(1) a
         &:nth-child(1),
-        &:nth-child(2),
-        &:nth-child(3),
         &:nth-child(4)
-          height: 90px
+          width: 30%
+        &:nth-child(2),
+        &:nth-child(3)
+          width: calc(100% - 30% - var(--photo-gap))
+    .b
+      a
+        height: 90px
         &:nth-child(5),
         &:nth-child(6)
-          height: 150px
-      &:nth-child(2) a
-        height: 110px
-  .about-item:nth-child(1)
+          height: 140px
+    .d
+      a
+        &:last-child
+          height: 90px
+    .e
+      a
+        height: 90px
+        &:nth-child(5),
+        &:nth-child(6)
+          height: 140px
+    .f
+      a
+        height: 100px
+        &:nth-child(3),
+        &:nth-child(4)
+          height: 120px
+        &:nth-child(1),
+        &:nth-child(5)
+          width: calc(61% - var(--photo-gap))
+        &:nth-child(2),
+        &:nth-child(6)
+          width: 39%
+        &:nth-child(3)
+          width: 27%
+        &:nth-child(4)
+          width: calc(100% - 27% - var(--photo-gap))
+    .l
+      display: flex
+
+  .about-item__col.mob
+    display: flex
+  .about-item__col.full
+    display: none
+
+  .about-wrapper
     gap: 10px
-    .about-item__col:nth-child(1) .about-photo
-      margin-top: 5px
-  .about-photo-v3
-    .a
-      width: 100%
-      div
-        width: 100% !important
-        a
-          &:nth-child(1),
-          &:nth-child(2)
-            height: 90px !important
-          &:nth-child(3),
-          &:nth-child(4)
-            height: 110px !important
-          &:nth-child(1),
-          &:nth-child(4)
-            width: 32% !important
-          &:nth-child(2),
-          &:nth-child(3)
-            width: calc(100% - 32% - var(--photo-gap)) !important
-    .b
-      display: none
+    max-height: 585px
+    transition: 2s
+    &.show
+      max-height: 2700px
 
   .design-block
     padding: 40px 30px

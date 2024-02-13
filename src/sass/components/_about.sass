@@ -10,7 +10,7 @@
     width: 100%
     background: #fff
     border-radius: var(--border-radius)
-    padding: 45px 55px
+    padding: 45px 60px
     counter-increment: about
     &-md
       width: calc(100% / 2 - 10px)
@@ -74,16 +74,6 @@
         font-weight: 700
         line-height: 25px
     &:nth-child(1)
-      @include flexbox
-      align-items: flex-start
-      gap: 15px
-      .about-item__col
-        width: calc((100% - 15px) / 2)
-        &:nth-child(1)
-          .about-photo
-            margin-top: 30px
-            &-v1 a
-              height: 153px
       .about-item__title
         margin-right: -40px
         &::before
@@ -271,136 +261,248 @@
         line-height: 20px
         opacity: 0.35
 
+  &-item__col
+    width: calc(48% - 15px)
+    &:nth-child(2n)
+      width: 52%
+    &.full
+      width: 100% !important
+    &.mob
+      display: none
+
   &-photo
     @include flexbox
-    align-items: flex-start
     --photo-gap: 15px
     gap: var(--photo-gap)
     a
       display: block
-      height: 160px
+      width: 100%
+      transform: rotate(var(--rotate, 0deg))
     img
-      object-fit: cover
-      object-position: center
-      max-width: initial
-      border-radius: 10px
       width: 100%
       height: 100%
-    &-v1
-      a
-        &:nth-child(1),
-        &:nth-child(4),
-        &:nth-child(5),
-        &:nth-child(8)
-          width: 32%
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(6),
-        &:nth-child(7)
-          width: calc(100% - 32% - var(--photo-gap))
-        &:nth-child(3),
-        &:nth-child(4)
-          height: 190px
-      &.revert
-        flex-direction: row-reverse
-    &-v2
-      &.revert
-        flex-direction: row-reverse
-        div
-          flex-direction: row-reverse
-      div
-        @include flexbox
-        align-items: flex-start
-        gap: var(--photo-gap)
-        &:nth-child(1)
-          width: calc(100% - 26% - var(--photo-gap))
-          a
-            &:nth-child(1),
-            &:nth-child(4)
-              width: 36%
-            &:nth-child(2),
-            &:nth-child(3)
-              width: calc(100% - 36% - var(--photo-gap))
-            &:nth-child(1),
-            &:nth-child(2),
-            &:nth-child(3),
-            &:nth-child(4)
-              height: 140px
-            &:nth-child(5),
-            &:nth-child(6)
-              width: calc((100% - var(--photo-gap)) / 2)
-              height: 230px
-        &:nth-child(2)
-          width: 26%
-          a
-            width: 100%
-            height: 170px
-    &-v3
+      object-fit: cover
+      object-position: center
+      border-radius: 10px
+    .a
       @include flexbox
       align-items: flex-start
       gap: var(--photo-gap)
-      .a
+      margin-top: 22px
+      width: 100%
+      a
+        &:nth-child(1),
+        &:nth-child(4)
+          width: 34%
+        &:nth-child(2),
+        &:nth-child(3)
+          width: calc(100% - 34% - var(--photo-gap))
+        &:nth-child(1),
+        &:nth-child(2)
+          height: 160px
+        &:nth-child(3),
+        &:nth-child(4)
+          height: 180px
+    .b
+      @include flexbox
+      align-items: flex-start
+      gap: var(--photo-gap)
+      width: calc(75% - var(--photo-gap))
+      a
+        height: 140px
+        &:nth-child(1),
+        &:nth-child(4)
+          width: calc(38% - var(--photo-gap))
+        &:nth-child(2),
+        &:nth-child(3)
+          width: 62%
+        &:nth-child(5),
+        &:nth-child(6)
+          width: calc((100% - var(--photo-gap)) / 2)
+          height: 256px
+    .c
+      width: 25%
+      @include flexbox
+      align-items: flex-start
+      flex-direction: column
+      gap: var(--photo-gap)
+      a
+        width: 100%
+        flex: 1
+    .d
+      width: 25%
+      @include flexbox
+      align-items: flex-start
+      flex-direction: column
+      gap: var(--photo-gap)
+      a
+        width: 100%
+        flex: 1
+        &:last-child
+          flex: initial
+          height: 145px
+    .e
+      @include flexbox
+      align-items: flex-start
+      gap: var(--photo-gap)
+      width: calc(75% - var(--photo-gap))
+      a
+        height: 140px
+        &:nth-child(2),
+        &:nth-child(3)
+          width: calc(38% - var(--photo-gap))
+        &:nth-child(1),
+        &:nth-child(4)
+          width: 62%
+        &:nth-child(5),
+        &:nth-child(6)
+          width: calc((100% - var(--photo-gap)) / 2)
+          height: 220px
+    .f
+      @include flexbox
+      align-items: flex-start
+      gap: var(--photo-gap)
+      a
+        height: 160px
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(6)
+          width: 34%
+        &:nth-child(1),
+        &:nth-child(4),
+        &:nth-child(5)
+          width: calc(100% - 34% - var(--photo-gap))
+        &:nth-child(3),
+        &:nth-child(4)
+          height: 180px
+    .g
+      width: calc(100% - 14%)
+      @include flexbox
+      align-items: flex-start
+      gap: var(--photo-gap)
+      &-1
         @include flexbox
         align-items: flex-start
         gap: var(--photo-gap)
-        width: calc(100% - 13% - var(--photo-gap))
-        div
-          @include flexbox
-          align-items: flex-start
-          gap: var(--photo-gap)
-          &:nth-child(1)
-            width: 100%
-            a
-              height: 160px
-              &:nth-child(1)
-                width: 35%
-              &:nth-child(2)
-                width: 15%
-              &:nth-child(3)
-                width: 18%
-              &:nth-child(4)
-                width: calc(100% - 35% - 15% - 18% - (var(--photo-gap) * 3))
-          &:nth-child(2)
-            width: 42%
-            a
-              height: 160px
-              &:nth-child(1)
-                width: 45%
-              &:nth-child(2)
-                width: calc(100% - 45% - var(--photo-gap))
-              &:nth-child(3)
-                width: 45%
-                height: 190px
-              &:nth-child(4)
-                width: calc(100% - 45% - var(--photo-gap))
-                height: 190px
-          &:nth-child(3)
-            width: calc(100% - 42% - var(--photo-gap))
-            a
-              height: 190px
-              &:nth-child(1)
-                width: 45%
-              &:nth-child(2)
-                width: calc(100% - 45% - var(--photo-gap))
-              &:nth-child(3)
-                width: 45%
-                height: 160px
-              &:nth-child(4)
-                width: calc(100% - 45% - var(--photo-gap))
-                height: 160px
-      .b
-        @include flexbox
-        align-items: flex-start
-        gap: var(--photo-gap)
-        width: 13%
+        width: 100%
         a
-          width: 100%
+          height: 160px
           &:nth-child(1)
-            height: 200px
+            width: calc(36% - var(--photo-gap))
+          &:nth-child(2)
+            width: calc(15%)
+          &:nth-child(3)
+            width: calc(18%)
+          &:nth-child(4)
+            flex: 1
+            height: 140px
+      &-2
+        @include flexbox
+        align-items: flex-start
+        gap: var(--photo-gap)
+        width: 18%
+        a
+          &:nth-child(1)
+            height: 180px
           &:nth-child(2)
             height: 160px
-          &:nth-child(3)
-            height: 150px
+      &-3
+        @include flexbox
+        align-items: flex-start
+        gap: var(--photo-gap)
+        width: calc(23% - var(--photo-gap))
+        a
+          &:nth-child(1)
+            height: 220px
+          &:nth-child(2)
+            height: 120px
+      &-4
+        @include flexbox
+        align-items: flex-start
+        gap: var(--photo-gap)
+        flex: 1
+        a
+          &:nth-child(1)
+            height: 160px
+          &:nth-child(2)
+            height: 180px
+      &-5
+        @include flexbox
+        align-items: flex-start
+        gap: var(--photo-gap)
+        width: calc(23% - var(--photo-gap))
+        margin-top: -20px
+        a
+          &:nth-child(1)
+            height: 140px
+          &:nth-child(2)
+            height: 220px
+    .h
+      width: calc(14% - var(--photo-gap))
+      @include flexbox
+      align-items: flex-start
+      gap: var(--photo-gap)
+      flex-direction: column
+      a
+        width: 100%
+        &:nth-child(1)
+          flex: 1
+        &:nth-child(2)
+          height: 160px
+        &:nth-child(3)
+          height: 150px
+    .i
+      @include flexbox
+      align-items: flex-start
+      gap: var(--photo-gap)
+      width: 100%
+      a
+        height: 120px
+        &:nth-child(1)
+          width: calc(70% - var(--photo-gap))
+        &:nth-child(2)
+          width: 30%
+    .j
+      @include flexbox
+      align-items: flex-start
+      flex-direction: column
+      gap: var(--photo-gap)
+      width: 36%
+      a
+        height: 125px
+        &:nth-child(1)
+          height: 140px
+        &:nth-child(4)
+          height: 95px
+        &:nth-child(5)
+          flex: 1
+    .k
+      @include flexbox
+      align-items: flex-start
+      gap: var(--photo-gap)
+      width: calc(100% - 36% - var(--photo-gap))
+      a
+        height: 125px
+        &:nth-child(2)
+          height: 160px
+        &:nth-child(4)
+          height: 150px
+    .l
+      @include flexbox
+      align-items: flex-start
+      gap: var(--photo-gap)
+      width: 100%
+      display: none
+      a
+        height: 200px
+        width: calc((100% - var(--photo-gap)) / 2)
 
-  &-hide
-    display: none
+  &-wrapper
+    max-height: 570px
+    overflow: hidden
+    @include flexbox
+    align-items: flex-start
+    gap: 15px
+    transition: 1s
+    &.show
+      max-height: 2000px
