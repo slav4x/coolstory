@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dragToClose: false,
     autoFocus: false,
     placeFocusBack: false,
+    closeButton: false,
   });
 
   const maskOptions = {
@@ -156,23 +157,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  const themeGalleryMain = document.getElementsByClassName('theme-gallery__main');
-  const themeGalleryThumbnails = document.getElementsByClassName('theme-gallery__thumbnails');
-  for (let i = 0; i < themeGalleryMain.length; i++) {
-    const m = new Splide(themeGalleryMain[i], {
-      type: 'loop',
+  const themeGalleryMain = document.querySelectorAll('.theme-gallery__main');
+  const themeGalleryThumbnails = document.querySelectorAll('.theme-gallery__thumbnails');
+
+  themeGalleryMain.forEach((main, i) => {
+    const mainSlider = new Splide(main, {
+      type: 'fade',
       rewind: true,
       pagination: false,
       arrows: false,
     });
 
-    const t = new Splide(themeGalleryThumbnails[i], {
-      type: 'loop',
+    const thumbSlider = new Splide(themeGalleryThumbnails[i], {
+      type: 'slide',
       perPage: 4,
       perMove: 1,
       gap: 15,
       rewind: true,
       pagination: false,
+      isNavigation: true,
       arrowPath:
         'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
       breakpoints: {
@@ -182,10 +185,10 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     });
 
-    t.mount();
-    m.sync(t);
-    m.mount();
-  }
+    mainSlider.sync(thumbSlider);
+    mainSlider.mount();
+    thumbSlider.mount();
+  });
 
   document.querySelectorAll('.about-design__tabs li').forEach((tab) => {
     tab.addEventListener('click', function () {
@@ -200,11 +203,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const aboutPhotos = document.querySelector('.about-wrapper');
   const aboutBtn = document.querySelector('.about-item__more a');
-  aboutBtn.addEventListener('click', function () {
-    this.textContent = this.textContent === 'Посмотреть больше примеров фото' ? 'Скрыть примеры фото' : 'Посмотреть больше примеров фото';
+  if (aboutBtn) {
+    aboutBtn.addEventListener('click', function () {
+      this.textContent = this.textContent === 'Посмотреть больше примеров фото' ? 'Скрыть примеры фото' : 'Посмотреть больше примеров фото';
 
-    aboutPhotos.classList.toggle('show');
-  });
+      aboutPhotos.classList.toggle('show');
+    });
+  }
 
   const designSlider = document.querySelector('.design-slider');
   if (designSlider) {
@@ -275,4 +280,40 @@ document.addEventListener('DOMContentLoaded', function () {
       forceVisible: 'x',
     });
   }
+
+  const popupGalleryMain = document.querySelectorAll('.popup-gallery__main');
+  const popupGalleryThumbnails = document.querySelectorAll('.popup-gallery__thumbnails');
+
+  popupGalleryMain.forEach((main, i) => {
+    const mainSlider = new Splide(main, {
+      type: 'fade',
+      rewind: true,
+      pagination: false,
+      arrows: false,
+    });
+
+    const thumbSlider = new Splide(popupGalleryThumbnails[i], {
+      type: 'slide',
+      perPage: 4,
+      perMove: 1,
+      gap: 10,
+      rewind: true,
+      pagination: false,
+      isNavigation: true,
+      arrowPath:
+        'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
+    });
+
+    mainSlider.sync(thumbSlider);
+    mainSlider.mount();
+    thumbSlider.mount();
+  });
+
+  document.querySelectorAll('.popup-close').forEach((closeButton) => {
+    closeButton.addEventListener('click', function () {
+      if (Fancybox.getInstance()) {
+        Fancybox.getInstance().close();
+      }
+    });
+  });
 });

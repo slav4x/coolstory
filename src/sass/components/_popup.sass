@@ -1,0 +1,178 @@
+.popup
+  display: none
+  max-width: 1040px
+  width: 100%
+  padding: 40px
+  border-radius: 25px
+  box-shadow: 26px 28px 84px 0px rgba(207, 207, 207, 0.10), 103px 112px 152px 0px rgba(207, 207, 207, 0.09), 231px 253px 206px 0px rgba(207, 207, 207, 0.05), 411px 449px 244px 0px rgba(207, 207, 207, 0.01), 642px 702px 266px 0px rgba(207, 207, 207, 0.00)
+  background: #fff
+  color: var(--color-black)
+  &-wrapper
+    @include flexbox
+    gap: 20px
+    width: 100%
+  &-content
+    width: 52%
+  &-form
+    width: calc(100% - 52% - 20px)
+    background: #f9f9f9
+    border-radius: 20px
+    padding: 45px 40px
+    .input
+      background-color: #fff
+      width: 100%
+    .btn
+      width: 100%
+      padding: 20px
+      justify-content: center
+      text-align: center
+    label
+      display: block
+      width: 100%
+      span
+        display: block
+        margin: 5px 0 10px
+        text-align: center
+        font-size: 12px
+        opacity: 0.75
+    form
+      @include flexbox
+      align-items: center
+      flex-direction: column
+      gap: 15px
+    small
+      display: block
+      text-align: center
+      font-size: 12px
+      line-height: 18px
+      color: rgba(21, 43, 54, 0.75)
+      max-width: 230px
+      margin: -5px auto 0
+      a
+        color: var(--color-blue)
+        font-weight: 600
+        border-bottom: 1px solid var(--color-blue)
+  &-title
+    text-align: center
+    font-size: 27px
+    font-weight: 600
+    line-height: 30px
+    margin-bottom: 10px
+    & + form
+      margin-top: 20px
+  &-subtitle
+    text-align: center
+    max-width: 260px
+    font-size: 12px
+    line-height: 20px
+    font-weight: 400
+    margin: 0 auto 20px
+    span
+      font-weight: 600
+  &-gallery
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center
+    .splide__list,
+    .splide__track,
+    .splide__slide
+      height: 100%
+    .splide__arrow
+      width: 35px
+      height: 35px
+      opacity: 1 !important
+      background: var(--color-blue)
+      cursor: pointer
+      svg
+        fill: #fff
+        width: 11px
+        height: 11px
+      &--prev
+        left: -10px
+      &--next
+        right: -10px
+    &__main
+      width: 100%
+      height: 430px
+      border-radius: 20px
+      overflow: hidden
+    &__thumbnails
+      width: 100%
+      height: 100px
+      margin-top: 10px
+      .splide__slide
+        border-radius: 10px
+        overflow: hidden
+        opacity: 0.3
+        transition: .25s
+        &.is-active
+          opacity: 1
+  &-image
+    width: 100%
+    height: 100%
+    object-fit: cover
+    object-position: center
+    border-radius: 20px
+  &-sidebar
+    width: calc(100% - 52% - 40px)
+    margin-left: auto
+    .popup-form
+      width: 100%
+    .popup-title
+      font-size: 24px
+  &-name
+    font-size: 40px
+    font-weight: 600
+    margin-bottom: 5px
+  &-type
+    font-size: 16px
+    line-height: 25px
+    font-weight: 400
+    opacity: 0.25
+    margin-bottom: 20px
+  &-spec
+    font-size: 22px
+    font-weight: 600
+    line-height: 25px
+    margin-bottom: 20px
+  &-list
+    margin-bottom: 20px
+    font-size: 15px
+    line-height: 25px
+    color: rgba(21, 43, 54, 0.75)
+    font-weight: 500
+    li
+      position: relative
+      padding-left: 20px
+      &::before
+        content: ''
+        position: absolute
+        top: 10px
+        left: 0
+        width: 6px
+        height: 6px
+        border-radius: 100%
+        background: var(--color-blue)
+  &-shorts
+    position: relative
+    width: 100%
+    padding-bottom: 178%
+    border-radius: 20px
+    overflow: hidden
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100% !important
+      height: 100% !important
+  &-close
+    position: absolute
+    top: 14px
+    right: 14px
+    z-index: 40
+    width: 24px
+    height: 24px
+    cursor: pointer
+    background: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 9L27 27M9 27L27 9L9 27Z' stroke='%2318181B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center / cover
