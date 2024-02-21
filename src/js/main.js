@@ -214,14 +214,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const designSlider = document.querySelector('.design-slider');
   if (designSlider) {
     const designSliderMain = new Splide('.design-slider__main', {
-      type: 'loop',
+      lazyLoad: 'nearby',
+      type: 'fade',
       rewind: true,
       pagination: false,
       arrows: false,
     });
 
     const designSliderThumbnails = new Splide('.design-slider__thumbnails', {
-      type: 'loop',
+      lazyLoad: 'nearby',
+      type: 'slide',
       perPage: 2,
       perMove: 1,
       gap: 15,
@@ -314,6 +316,39 @@ document.addEventListener('DOMContentLoaded', function () {
       if (Fancybox.getInstance()) {
         Fancybox.getInstance().close();
       }
+    });
+  });
+
+  // Генерация случайного токена
+  function generateToken() {
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var token = '';
+    for (var i = 0; i < 30; i++) {
+      token += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return token;
+  }
+
+  // Установка токена в скрытое поле формы
+  function setToken(form) {
+    var token = generateToken();
+    var hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.name = 't';
+    hiddenInput.value = token;
+    form.appendChild(hiddenInput);
+  }
+
+  const forms = document.querySelectorAll('form');
+  forms.forEach(function (form) {
+    setToken(form);
+    form.addEventListener('submit', function () {
+      const button = form.querySelector('.btn');
+
+      button.style.opacity = 0.5;
+      button.style.cursor = 'not-allowed';
+      button.disabled = true;
+      button.textContent = 'Отправка...';
     });
   });
 });
