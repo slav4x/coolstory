@@ -35,7 +35,7 @@ input, textarea
   width: 100%
   margin: 0 auto
   overflow: hidden
-  padding: 20px 0
+  padding: 130px 0 20px
 
 .container
   max-width: 1210px
@@ -49,6 +49,12 @@ input, textarea
   @include flexbox
   align-items: flex-start
 
+@keyframes moving
+  30%
+    transform: skewX(-45deg) translateX(33.5em)
+  100%
+    transform: skewX(-45deg) translateX(33.5em)
+
 .btn
   @include flexbox
   align-items: center
@@ -60,6 +66,23 @@ input, textarea
   border-radius: 999px
   box-shadow: 0px 4px 25px 0px rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset
   color: #fff
+  position: relative
+  overflow: hidden
+  transform: translate3d(0,0,0)
+  &:not(.btn-outline)::before
+    content: ""
+    background-color: rgba(255, 255, 255, 0.2)
+    height: 100%
+    width: 3em
+    display: block
+    position: absolute
+    top: 0
+    left: -4.5em
+    -webkit-transform: skewX(-45deg) translateX(0)
+    transform: skewX(-45deg) translateX(0)
+    -webkit-transition: none
+    transition: none
+    animation: moving 3s ease-in-out infinite
   &-rose
     background: var(--color-rose)
   &-blue

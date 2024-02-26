@@ -1,7 +1,6 @@
 .header
   width: calc(100% - (var(--spacing) * 2))
   max-width: 1390px
-  margin: 0 auto 20px
   background: #fff
   border-radius: var(--border-radius)
   padding: 15px
@@ -9,8 +8,16 @@
   backdrop-filter: blur(12.5px)
   @include flexbox
   align-items: center
-  position: relative
+  position: fixed
+  top: 20px
+  left: 0
+  right: 0
+  margin: 0 auto
+  transition: .5s
   z-index: 50
+  &.hide
+    transform: translateY(calc(-100% - 20px))
+    box-shadow: none
   &-logo
     margin-left: 30px
   &-city

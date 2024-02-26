@@ -86,7 +86,23 @@
         border-color: #F9F9F9
         color: #fff
 
-  &-tab
+  &-main .theme-tab
+    transform: translateY(20px)
+    transition: .5s
+    height: 0
+    overflow: hidden
+    opacity: 0
+    pointer-events: none
+    margin-left: -25px
+    margin-right: -25px
+    padding: 0 25px
+    &.active
+      transform: translateY(0px)
+      height: auto
+      opacity: 1
+      pointer-events: auto
+
+  &-sidebar .theme-tab
     display: none
     &.active
       display: block

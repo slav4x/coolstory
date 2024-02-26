@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   themeGalleryMain.forEach((main, i) => {
     const mainSlider = new Splide(main, {
-      type: 'fade',
+      type: 'slide',
       rewind: true,
       pagination: false,
       arrows: false,
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (designSlider) {
     const designSliderMain = new Splide('.design-slider__main', {
       lazyLoad: 'nearby',
-      type: 'fade',
+      type: 'slide',
       rewind: true,
       pagination: false,
       arrows: false,
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const designSliderThumbnails = new Splide('.design-slider__thumbnails', {
       lazyLoad: 'nearby',
-      type: 'slide',
+      type: 'loop',
       perPage: 2,
       perMove: 1,
       gap: 15,
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   popupGalleryMain.forEach((main, i) => {
     const mainSlider = new Splide(main, {
-      type: 'fade',
+      type: 'slide',
       rewind: true,
       pagination: false,
       arrows: false,
@@ -350,5 +350,22 @@ document.addEventListener('DOMContentLoaded', function () {
       button.disabled = true;
       button.textContent = 'Отправка...';
     });
+  });
+
+  let previousScrollPosition = pageYOffset;
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', function () {
+    const currentScrollPosition = pageYOffset;
+
+    if (currentScrollPosition > previousScrollPosition && currentScrollPosition > 250) {
+      header.classList.add('hide');
+      document.body.classList.remove('show-navbar');
+    } else {
+      header.classList.remove('hide');
+      document.body.classList.add('show-navbar');
+    }
+
+    previousScrollPosition = currentScrollPosition;
   });
 });
