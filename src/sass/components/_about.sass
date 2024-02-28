@@ -328,9 +328,11 @@
       align-items: flex-start
       flex-direction: column
       gap: var(--photo-gap)
+      height: 566px
       a
         width: 100%
-        flex: 1
+        // flex: 1
+        height: calc((100% - (var(--photo-gap) * 2)) / 3)
     .d
       width: 25%
       @include flexbox

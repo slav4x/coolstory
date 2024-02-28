@@ -86,23 +86,7 @@
         border-color: #F9F9F9
         color: #fff
 
-  &-main .theme-tab
-    transform: translateY(20px)
-    transition: .5s
-    height: 0
-    overflow: hidden
-    opacity: 0
-    pointer-events: none
-    margin-left: -25px
-    margin-right: -25px
-    padding: 0 25px
-    &.active
-      transform: translateY(0px)
-      height: auto
-      opacity: 1
-      pointer-events: auto
-
-  &-sidebar .theme-tab
+  &-tab
     display: none
     &.active
       display: block
@@ -167,9 +151,12 @@
       .splide__arrow
         width: 55px
         height: 55px
-        opacity: 1 !important
+        opacity: 1
         background: #fff
         box-shadow: 1px 1px 3px 0px rgba(186, 186, 186, 0.10), 3px 4px 5px 0px rgba(186, 186, 186, 0.09), 7px 10px 7px 0px rgba(186, 186, 186, 0.05), 13px 18px 9px 0px rgba(186, 186, 186, 0.01), 20px 27px 9px 0px rgba(186, 186, 186, 0.00)
+        transition: .25s
+        &:hover
+          opacity: 1
         svg
           fill: var(--color-blue)
           width: 16px
@@ -178,3 +165,22 @@
           right: -20px
         &--prev
           left: -20px
+        &[disabled]
+          opacity: 0 !important
+          pointer-events: none
+      .splide__slide
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          border-radius: 8px
+          border: 3px solid #7dc76b
+          z-index: 5
+          pointer-events: none
+          opacity: 0
+          transition: .25s
+      .is-active::before
+        opacity: 1

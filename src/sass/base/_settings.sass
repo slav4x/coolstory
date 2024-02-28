@@ -179,3 +179,183 @@ select.input
 
 .splide__track--nav>.splide__list>.splide__slide
   border: 0 !important
+
+.manager
+  position: fixed
+  bottom: 20px
+  right: 20px
+  background: #fff
+  z-index: 100
+  border-radius: var(--border-radius)
+  padding: var(--spacing)
+  text-align: center
+  @include flexbox
+  flex-direction: column
+  align-items: center
+  box-shadow: 0px 16px 59px 0px rgba(83, 86, 95, 0.10), 0px 66px 107px 0px rgba(83, 86, 95, 0.09), 0px 148px 145px 0px rgba(83, 86, 95, 0.05), 0px 264px 171px 0px rgba(83, 86, 95, 0.01)
+  transform: translateX(0)
+  opacity: 1
+  pointer-events: auto
+  transition: .25s
+  &-photo
+    width: 80px
+    height: 80px
+    border-radius: 100%
+    object-fit: cover
+    object-position: center
+  &-name
+    font-weight: 600
+    line-height: 1.25
+    margin-top: 10px
+  &-spec
+    margin-top: 5px
+    font-size: 12px
+    opacity: 0.5
+    margin-bottom: 15px
+    font-weight: 500
+  &-whatsapp
+    margin-bottom: 15px
+    @include flexbox
+    align-items: center
+    font-weight: 700
+    justify-content: center
+    gap: 8px
+    padding: 8px 12px
+    border-radius: 999px
+    background: #7DC76B
+    box-shadow: 4px 3px 13px 0px rgba(255, 255, 255, 0.25) inset
+    color: #fff
+    font-size: 13px
+    &::before
+      content: ''
+      display: block
+      width: 14px
+      height: 14px
+      background: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.22045 0.0198658C5.24833 0.168491 4.57246 0.380453 3.77918 0.785436C0.898422 2.25609 -0.589987 5.52984 0.21876 8.61648C0.280642 8.85264 0.43074 9.2799 0.55231 9.56593C0.673825 9.85196 0.783984 10.1476 0.796985 10.2228C0.810042 10.2981 0.638714 11.1787 0.416311 12.1799C0.193908 13.181 0.0140223 14.0001 0.0166007 14C0.0191792 14 0.878946 13.8051 1.92721 13.5669L3.83316 13.1339L4.28488 13.324C5.98357 14.0389 7.91547 14.0524 9.64296 13.3615C11.5015 12.6183 13.0285 11.0101 13.6516 9.1402C13.9307 8.30286 14 7.86449 14 6.9383C14 5.72987 13.7681 4.7693 13.2306 3.75208C12.2661 1.92654 10.5384 0.609714 8.49715 0.14424C8.04088 0.0401751 6.60162 -0.0384347 6.22045 0.0198658ZM8.46972 1.26854C10.1557 1.70002 11.592 2.87878 12.3431 4.44753C13.1146 6.05876 13.1207 7.77947 12.3607 9.3936C11.4753 11.2737 9.72239 12.5069 7.59569 12.7456C6.57732 12.86 5.45395 12.6622 4.44688 12.1913L3.98929 11.9773L2.75582 12.255C2.07736 12.4077 1.51088 12.5213 1.49695 12.5073C1.48301 12.4934 1.59158 11.9363 1.73822 11.2692L2.00489 10.0565L1.71216 9.46909C1.54873 9.14119 1.35469 8.6398 1.27295 8.33423C1.14277 7.84774 1.12658 7.68937 1.12774 6.91093C1.12889 6.14509 1.14688 5.96827 1.27087 5.50373C1.70986 3.85878 2.86581 2.43936 4.35521 1.71633C5.35526 1.23087 6.08863 1.07234 7.18051 1.10557C7.73948 1.12259 8.05569 1.16256 8.46972 1.26854ZM4.36553 4.08804C3.77759 4.62884 3.6502 5.46595 4.02665 6.31534C4.35872 7.06465 5.38197 8.2964 6.12884 8.84596C6.90791 9.41917 8.05377 9.85519 8.79888 9.86192C9.20281 9.86559 9.26618 9.85032 9.59435 9.67033C10.076 9.40614 10.2547 9.15044 10.2933 8.67013L10.3224 8.30872L9.5881 7.95202C9.18416 7.75582 8.80113 7.59527 8.73683 7.59527C8.66529 7.59521 8.5609 7.67486 8.46791 7.80049C8.21028 8.14844 7.9311 8.41634 7.82615 8.41634C7.5337 8.41634 6.52208 7.7665 6.12023 7.32046C5.86096 7.03273 5.42498 6.41354 5.42498 6.33307C5.42498 6.30816 5.54842 6.147 5.69928 5.975C5.87818 5.77098 5.97358 5.61255 5.97358 5.51944C5.97358 5.34629 5.46799 4.12034 5.33699 3.97593C5.26556 3.89715 5.1672 3.87274 4.92153 3.87274C4.62315 3.87274 4.58255 3.88845 4.36553 4.08804Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat center / cover
+  &-phone
+    font-size: 18px
+    font-weight: 600
+    i
+      opacity: 0.1
+      font-style: normal
+  &-close
+    position: absolute
+    top: 10px
+    right: 10px
+    z-index: 40
+    width: 20px
+    height: 20px
+    cursor: pointer
+    background: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 9L27 27M9 27L27 9L9 27Z' stroke='%2318181B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center / cover
+  &.hide
+    transform: translateX(calc(100% + 30px))
+    opacity: 0
+    pointer-events: none
+  &-icon
+    position: fixed
+    bottom: 20px
+    right: 20px
+    z-index: 99
+    // transform-origin: bottom right
+    animation: size 1.5s linear infinite
+    &::before
+      content: ''
+      position: absolute
+      top: 6px
+      right: 6px
+      width: 16px
+      height: 16px
+      border-radius: 100%
+      background: #23d323
+      border: 3px solid #fff
+      animation: online 2s linear infinite
+    img
+      width: 80px
+      height: 80px
+      border-radius: 100%
+      object-fit: cover
+      object-position: center
+      cursor: pointer
+      box-shadow: 0px 16px 59px 0px rgba(83, 86, 95, 0.10), 0px 66px 107px 0px rgba(83, 86, 95, 0.09), 0px 148px 145px 0px rgba(83, 86, 95, 0.05), 0px 264px 171px 0px rgba(83, 86, 95, 0.01)
+      border: 3px solid #fff
+
+@keyframes online
+  0%
+    background: #23d323
+  40%
+    background: #23d323
+  50%
+    background: #fff
+  60%
+    background: #23d323
+  100%
+    background: #23d323
+
+@keyframes size
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.05)
+  100%
+    transform: scale(1)
+
+.video
+  position: fixed
+  bottom: 20px
+  left: 20px
+  background: #fff
+  z-index: 100
+  border-radius: var(--border-radius)
+  padding: 5px
+  box-shadow: 0px 16px 59px 0px rgba(83, 86, 95, 0.10), 0px 66px 107px 0px rgba(83, 86, 95, 0.09), 0px 148px 145px 0px rgba(83, 86, 95, 0.05), 0px 264px 171px 0px rgba(83, 86, 95, 0.01)
+  transform: translateX(0)
+  opacity: 1
+  pointer-events: auto
+  transition: .25s
+  &-close
+    position: absolute
+    top: 15px
+    right: 15px
+    z-index: 40
+    width: 20px
+    height: 20px
+    cursor: pointer
+    background: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 9L27 27M9 27L27 9L9 27Z' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center / cover
+  &-play
+    position: relative
+    width: 280px
+    height: 160px
+    border-radius: 20px
+    overflow: hidden
+    display: block
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: #000
+      opacity: 0.3
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 48px
+      height: 48px
+      border-radius: 100%
+      background: var(--color-rose) url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 11.9994V8.43941C4 4.01941 7.13 2.20941 10.96 4.41941L14.05 6.19941L17.14 7.97941C20.97 10.1894 20.97 13.8094 17.14 16.0194L14.05 17.7994L10.96 19.5794C7.13 21.7894 4 19.9794 4 15.5594V11.9994Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat center
+      margin: auto
+    video
+      display: block
+      width: 100%
+      height: 100%
+      object-fit: cover
+      background-size: cover
+  &.hide
+    transform: translateX(calc(-100% - 30px))
+    opacity: 0
+    pointer-events: none

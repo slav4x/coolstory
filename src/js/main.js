@@ -162,20 +162,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   themeGalleryMain.forEach((main, i) => {
     const mainSlider = new Splide(main, {
-      type: 'slide',
-      rewind: true,
+      speed: 800,
+      // type: 'slide',
+      rewind: false,
       pagination: false,
       arrows: false,
     });
 
     const thumbSlider = new Splide(themeGalleryThumbnails[i], {
-      type: 'slide',
+      speed: 800,
+      // type: 'slide',
       perPage: 4,
       perMove: 1,
       gap: 15,
-      rewind: true,
+      rewind: false,
       pagination: false,
       isNavigation: true,
+      arrows: true,
       arrowPath:
         'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
       breakpoints: {
@@ -214,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const designSlider = document.querySelector('.design-slider');
   if (designSlider) {
     const designSliderMain = new Splide('.design-slider__main', {
+      speed: 800,
       lazyLoad: 'nearby',
       type: 'slide',
       rewind: true,
@@ -222,6 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const designSliderThumbnails = new Splide('.design-slider__thumbnails', {
+      speed: 800,
       lazyLoad: 'nearby',
       type: 'loop',
       perPage: 2,
@@ -288,13 +293,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   popupGalleryMain.forEach((main, i) => {
     const mainSlider = new Splide(main, {
+      speed: 800,
       type: 'slide',
       rewind: true,
       pagination: false,
       arrows: false,
+      heightRatio: 0.5,
+      updateOnMove: true,
     });
 
     const thumbSlider = new Splide(popupGalleryThumbnails[i], {
+      speed: 800,
       type: 'slide',
       perPage: 4,
       perMove: 1,
@@ -306,9 +315,42 @@ document.addEventListener('DOMContentLoaded', function () {
         'M9.34315 13.7216L15.7071 7.67216C16.0976 7.30094 16.0976 6.69907 15.7071 6.32784L9.34315 0.278418C8.95262 -0.0928049 8.31946 -0.0928049 7.92893 0.278418C7.53841 0.649641 7.53841 1.25151 7.92893 1.62273L12.5858 6.04943L6.95061e-07 6.04942L5.28858e-07 7.95058L12.5858 7.95058L7.92893 12.3773C7.53841 12.7485 7.53841 13.3504 7.92893 13.7216C8.31946 14.0928 8.95262 14.0928 9.34315 13.7216Z',
     });
 
+    mainSlider.on('mounted move', function () {
+      const activeSlide = mainSlider.Components.Elements.slides[mainSlider.index];
+      const activeImage = activeSlide.querySelector('img');
+      activeImage.onload = function () {
+        mainSlider.root.style.maxHeight = activeImage.offsetHeight + 'px';
+      };
+      if (activeImage.complete) {
+        mainSlider.root.style.maxHeight = activeImage.offsetHeight + 'px';
+      }
+    });
+
     mainSlider.sync(thumbSlider);
     mainSlider.mount();
     thumbSlider.mount();
+  });
+
+  Fancybox.bind('[data-fancybox]', {
+    dragToClose: false,
+    autoFocus: false,
+    placeFocusBack: false,
+    closeButton: false,
+    on: {
+      done: (fancybox) => {
+        const slider = fancybox.container.querySelector('.popup-gallery__main');
+        if (slider) {
+          const firstImage = slider.querySelector('.splide__slide.is-active img');
+          slider.style.maxHeight = firstImage.offsetHeight + 'px';
+        }
+      },
+      destroy: () => {
+        const sliders = document.querySelectorAll('.popup-gallery__main');
+        sliders?.forEach((slider) => {
+          slider.style.maxHeight = '0px';
+        });
+      },
+    },
   });
 
   document.querySelectorAll('.popup-close').forEach((closeButton) => {
@@ -367,5 +409,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     previousScrollPosition = currentScrollPosition;
+  });
+
+  const videoPopup = document.querySelector('.video');
+  const videoPopupClose = videoPopup.querySelector('.video-close');
+  videoPopupClose.addEventListener('click', function () {
+    videoPopup.classList.add('hide');
+  });
+
+  const managerPopup = document.querySelector('.manager');
+  const managerPopupClose = managerPopup.querySelector('.manager-close');
+  managerPopupClose.addEventListener('click', function () {
+    managerPopup.classList.add('hide');
+  });
+
+  const managerIcon = document.querySelector('.manager-icon');
+  managerIcon.addEventListener('click', function () {
+    managerPopup.classList.remove('hide');
   });
 });
