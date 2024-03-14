@@ -35,7 +35,7 @@
         right: 30px
         width: 36px
         height: 11px
-        background: url("data:image/svg+xml,%3Csvg width='26' height='11' viewBox='0 0 26 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.9142 9.72534C11.9296 10.3459 12.4373 10.6561 13 10.6561C13.5627 10.6561 14.0704 10.3459 15.0858 9.72534L18.8694 7.41313C23.7747 4.41545 26.2274 2.9166 25.8171 1.4583C25.4067 0 22.5324 0 16.7836 0H9.21637C3.46763 0 0.593259 0 0.182942 1.4583C-0.227374 2.9166 2.22527 4.41545 7.13057 7.41313L10.9142 9.72534Z' fill='%2382C971'/%3E%3C/svg%3E%0A") no-repeat center
+        background: url("data:image/svg+xml,%3Csvg width='26' height='11' viewBox='0 0 26 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.9142 9.72534C11.9296 10.3459 12.4373 10.6561 13 10.6561C13.5627 10.6561 14.0704 10.3459 15.0858 9.72534L18.8694 7.41313C23.7747 4.41545 26.2274 2.9166 25.8171 1.4583C25.4067 0 22.5324 0 16.7836 0H9.21637C3.46763 0 0.593259 0 0.182942 1.4583C-0.227374 2.9166 2.22527 4.41545 7.13057 7.41313L10.9142 9.72534Z' fill='%233AABE2'/%3E%3C/svg%3E%0A") no-repeat center
         opacity: 0
         transition: .25s
       b
@@ -52,7 +52,8 @@
         transition: .25s
         font-weight: 500
       &.active
-        background: #7dc76b
+        // background: #7dc76b
+        background: var(--color-blue)
         border-color: #F9F9F9
         &::after
           opacity: 1
@@ -81,8 +82,10 @@
       justify-content: center
       font-weight: 600
       color: rgba(21, 43, 54, 0.35)
+      position: relative
       &.active
-        background: #7dc76b
+        // background: #7dc76b
+        background: var(--color-blue)
         border-color: #F9F9F9
         color: #fff
 
@@ -177,10 +180,35 @@
           right: 0
           bottom: 0
           border-radius: 8px
-          border: 3px solid #7dc76b
+          border: 3px solid var(--color-blue)
           z-index: 5
           pointer-events: none
           opacity: 0
           transition: .25s
       .is-active::before
         opacity: 1
+
+.moving
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: -7px
+  overflow: hidden
+  border-radius: 15px
+  pointer-events: none
+  z-index: 5
+  &::before
+    content: ""
+    background-color: rgba(255, 255, 255, 0.2)
+    height: 100%
+    width: 3em
+    display: block
+    position: absolute
+    top: 0
+    left: -4.5em
+    -webkit-transform: skewX(-45deg) translateX(0)
+    transform: skewX(-45deg) translateX(0)
+    -webkit-transition: none
+    transition: none
+    animation: moving 3s ease-in-out infinite

@@ -412,19 +412,23 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   const videoPopup = document.querySelector('.video');
-  const videoPopupClose = videoPopup.querySelector('.video-close');
-  videoPopupClose.addEventListener('click', function () {
-    videoPopup.classList.add('hide');
-  });
+  if (videoPopup) {
+    const videoPopupClose = videoPopup.querySelector('.video-close');
+    videoPopupClose.addEventListener('click', function () {
+      videoPopup.classList.add('hide');
+    });
+  }
 
   const managerPopup = document.querySelector('.manager');
-  const managerPopupClose = managerPopup.querySelector('.manager-close');
-  managerPopupClose.addEventListener('click', function () {
-    managerPopup.classList.add('hide');
-  });
+  if (managerPopup) {
+    const managerPopupClose = managerPopup.querySelector('.manager-close');
+    managerPopupClose.addEventListener('click', function () {
+      managerPopup.classList.add('hide');
+    });
 
-  const managerIcon = document.querySelector('.manager-icon');
-  managerIcon.addEventListener('click', function () {
-    managerPopup.classList.remove('hide');
-  });
+    const managerIcon = document.querySelector('.manager-icon');
+    managerIcon.addEventListener('click', function () {
+      managerPopup.classList.remove('hide');
+    });
+  }
 });
