@@ -1,0 +1,212 @@
+.configurator
+  padding: 60px 0
+  &-title
+    text-align: center
+    font-weight: 600
+    font-size: 45px
+    letter-spacing: -0.03em
+    text-align: center
+    margin-bottom: 50px
+  &-type
+    @include flexbox
+    align-items: flex-start
+    gap: 25px
+    margin-bottom: 40px
+  &-label
+    display: block
+    flex: 1
+    select
+      height: 90px
+      width: 100%
+      display: block
+      border-radius: 12px
+      padding-left: 40px
+      padding-right: 40px
+      background: #fff
+      background-repeat: no-repeat
+      background-position: right 20px center
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='7' viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.86603 6.5C4.48113 7.16667 3.51887 7.16667 3.13397 6.5L0.535899 2C0.150999 1.33333 0.632124 0.499999 1.40192 0.499999L6.59808 0.5C7.36788 0.5 7.849 1.33333 7.4641 2L4.86603 6.5Z' fill='%23152B36'/%3E%3C/svg%3E%0A")
+      appearance: none
+      font-size: 18px
+      font-weight: 400
+      cursor: pointer
+      color: var(--color-black)
+  &-content
+    @include flexbox
+    align-items: flex-start
+    gap: 30px
+  &-gallery
+    width: calc(100% - 460px - 30px)
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      background-size: cover
+    .splide__list,
+    .splide__track,
+    .splide__slide
+      height: 100%
+    &__main
+      height: 620px
+      border-radius: var(--border-radius)
+      overflow: hidden
+      .splide__arrow
+        width: 55px
+        height: 55px
+        opacity: 1
+        background: var(--color-blue)
+        transition: .25s
+        &:hover
+          opacity: 1
+        svg
+          fill: #fff
+          width: 16px
+          height: 17px
+        &--next
+          right: 20px
+        &--prev
+          left: 20px
+        &[disabled]
+          opacity: 0 !important
+          pointer-events: none
+    &__thumbnails
+      width: calc(100% - 40px)
+      height: 120px
+      margin-top: -60px
+      margin-left: 20px
+      img
+        border-radius: 12px
+      .splide__slide
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          border-radius: 10px
+          border: 2px solid #fff
+          z-index: 5
+          pointer-events: none
+          transition: .25s
+  &-main
+    width: 460px
+    background: #fff
+    padding: 20px 20px 40px
+    border-radius: var(--border-radius)
+    height: 680px
+  &-total
+    margin-top: 40px
+    @include flexbox
+    align-items: center
+    padding: 30px 50px
+    background: #fff
+    border-radius: var(--border-radius)
+    &__price
+      font-size: 35px
+      margin-right: auto
+      letter-spacing: -0.03em
+      b
+        font-weight: 700
+    &__label
+      font-size: 18px
+      opacity: 0.5
+      margin-right: 30px
+      b
+        font-weight: 700
+      &:last-child
+        margin-right: 0
+  &-albums
+    display: flex
+    flex-wrap: nowrap
+    align-items: flex-start
+    gap: 20px
+    overflow-x: visible
+    height: 100%
+    padding: 20px 20px 0
+    &__group
+      @include flexbox
+      flex-direction: column
+      gap: 20px
+      height: 100%
+      width: calc((100% - 30px) / 4)
+    &__item
+      display: block
+      height: 120px
+      width: 80px
+      opacity: 0.2
+      transition: .25s
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+        border-radius: 10px
+        box-shadow: 0px 0px 0px 2px #fff
+        transition: .25s
+      &.active
+        opacity: 1
+        img
+          box-shadow: 0px 0px 0px 2px #fff, 0px 3px 16px rgba(18, 30, 44, 0.25)
+      &:hover
+        opacity: 1
+    .simplebar-track.simplebar-horizontal
+      bottom: 5px !important
+  &-message
+    background: #fff
+    border-radius: var(--border-radius)
+    margin-bottom: 30px
+    padding: 25px 30px
+    display: none
+    &__author
+      @include flexbox
+      align-items: center
+      gap: 20px
+      img
+        width: 70px
+        height: 70px
+        object-fit: cover
+        object-position: center
+        border-radius: 100%
+      span
+        width: calc(100% - 90px)
+        display: block
+        line-height: 20px
+        b
+          font-size: 14px
+          font-weight: 700
+        p
+          font-size: 12px
+          opacity: 0.35
+    &__text
+      margin-top: 20px
+      h3
+        font-size: 26px
+        font-weight: 700
+        margin-bottom: 10px
+      p
+        font-size: 15px
+        line-height: 25px
+        margin-top: 5px
+  &-manager
+    padding: 25px 30px
+    @include flexbox
+    align-items: center
+    background: #fff
+    border-radius: var(--border-radius)
+    margin-top: 20px
+    display: none
+    img
+      width: 110px
+    b
+      width: calc(100% - 110px - 20px)
+      font-size: 18px
+      line-height: 28px
+      display: block
+      margin-left: auto
+      padding-top: 10px
+    .btn
+      width: 100%
+      margin-top: 15px
+      text-align: center
+      justify-content: center
