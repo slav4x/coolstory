@@ -513,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function () {
       speed: 800,
       lazyLoad: 'nearby',
       type: 'slide',
-      perPage: 4,
+      perPage: 5,
       perMove: 1,
       gap: 10,
       rewind: false,
@@ -528,57 +528,115 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const configs = JSON.parse(document.getElementById('albums').textContent);
 
-    if (configs.length > 0) {
-      updateGallery(configs[0].gallery); // Инициализация галереи с изображениями первого альбома
-      updateTotalInfo(configs[0]); // Обновление информации о первом альбоме
-    }
-
-    const formatSelect = document.querySelector('select[name="format"]');
-    const tarifSelect = document.querySelector('select[name="tarif"]');
-    const pagesSelect = document.querySelector('select[name="pages"]');
-
-    configs.forEach((config) => {
-      if (!Array.from(formatSelect.options).some((option) => option.value === config.format)) {
-        const option = new Option(config.format, config.format);
-        formatSelect.add(option);
-      }
+    // Инициализация Choices.js
+    const formatChoices = new Choices('select[name="format"]', {
+      searchEnabled: false,
+      shouldSort: false,
+      placeholderValue: 'Выберите формат',
+      resetScrollPosition: true,
     });
 
-    const updateSelect = (selectElement, key, formatValue, tarifValue) => {
-      selectElement.length = 1;
+    const tarifChoices = new Choices('select[name="tarif"]', {
+      searchEnabled: false,
+      shouldSort: false,
+      placeholderValue: 'Выберите тариф',
+      resetScrollPosition: true,
+      itemSelectText: '',
+    });
 
-      const filteredConfigs = configs.filter(
-        (config) => config.format === formatValue && (tarifValue === null || config.tarif === tarifValue)
-      );
+    const pagesChoices = new Choices('select[name="pages"]', {
+      searchEnabled: false,
+      shouldSort: false,
+      placeholderValue: 'Выберите кол-во страниц',
+      resetScrollPosition: true,
+      itemSelectText: '',
+    });
 
-      filteredConfigs.forEach((config) => {
-        if (!Array.from(selectElement.options).some((option) => option.value === config[key])) {
-          const displayValue = key === 'pages' ? `${config[key]} страниц` : config[key];
-          selectElement.add(new Option(displayValue, config[key]));
-        }
-      });
+    // Инициализация опций для формата
+    const formatOptions = configs.reduce((acc, config) => {
+      if (!acc.some((option) => option.value === config.format)) {
+        acc.push({ value: config.format, label: config.format });
+      }
+      return acc;
+    }, []);
+    formatChoices.setChoices(formatOptions, 'value', 'label', false);
+
+    // Обновление select элементов
+    const updateChoicesSelect = (choicesInstance, options, placeholder, isPagesSelect = false) => {
+      // Очистка существующих опций
+      choicesInstance.clearStore();
+
+      // Добавление плейсхолдера или статической опции в начало списка
+      const placeholderOption = [{ value: '', label: placeholder, selected: true, disabled: true }];
+
+      // Если это селект страниц, то модифицируем label для добавления "страниц"
+      const newOptions = isPagesSelect
+        ? options.map((option) => ({
+            value: option.value,
+            label: `${option.label} страниц`,
+          }))
+        : options;
+
+      const finalOptions = placeholderOption.concat(newOptions);
+
+      // Установка новых опций
+      choicesInstance.setChoices(finalOptions, 'value', 'label', false);
     };
 
-    const resetSelect = (selectElement) => (selectElement.selectedIndex = 0);
+    // Обработка изменения формата
+    formatChoices.passedElement.element.addEventListener('change', (event) => {
+      const selectedFormat = event.detail.value;
+      updateAlbums(selectedFormat);
+      // Фильтрация и обновление тарифов
+      const tarifOptions = configs
+        .filter((config) => config.format === selectedFormat)
+        .map((config) => config.tarif)
+        .filter((tarif, index, self) => self.indexOf(tarif) === index)
+        .map((tarif) => ({ value: tarif, label: tarif }));
+      updateChoicesSelect(tarifChoices, tarifOptions, 'Выберите тариф');
+      // Сброс и обновление страниц
+      pagesChoices.clearStore();
+      pagesChoices.setChoices([{ value: '', label: 'Выберите кол-во страниц', selected: true, disabled: true }], 'value', 'label', false);
+    });
 
-    function updateAlbums() {
+    // Обработка изменения тарифа
+    tarifChoices.passedElement.element.addEventListener('change', (event) => {
+      const selectedTarif = event.detail.value;
+      const selectedFormat = formatChoices.getValue(true);
+      updateAlbums(selectedFormat, selectedTarif);
+      // Фильтрация и обновление страниц
+      const pagesOptions = configs
+        .filter((config) => config.format === selectedFormat && config.tarif === selectedTarif)
+        .map((config) => config.pages)
+        .filter((pages, index, self) => self.indexOf(pages) === index)
+        .map((pages) => ({ value: pages, label: pages }));
+      updateChoicesSelect(pagesChoices, pagesOptions, 'Выберите кол-во страниц', true);
+    });
+
+    // Обработка изменения страниц
+    pagesChoices.passedElement.element.addEventListener('change', (event) => {
+      const selectedPages = event.detail.value;
+      const selectedFormat = formatChoices.getValue(true);
+      const selectedTarif = tarifChoices.getValue(true);
+      updateAlbums(selectedFormat, selectedTarif, selectedPages);
+    });
+
+    function updateAlbums(selectedFormat = '', selectedTarif = '', selectedPages = '') {
       const albumContainer = document.querySelector('.configurator-albums');
-      // Очищаем контейнер
+
       albumContainer.innerHTML = '';
       let group = document.createElement('div');
       group.classList.add('configurator-albums__group');
 
-      // Фильтрация конфигураций в соответствии с выбранными значениями
       const filteredConfigs = configs.filter((config) => {
-        const formatMatch = formatSelect.value === '' || config.format === formatSelect.value;
-        const tarifMatch = tarifSelect.value === '' || config.tarif === tarifSelect.value;
-        const pagesMatch = pagesSelect.value === '' || config.pages === pagesSelect.value || config.pages.includes(pagesSelect.value);
+        const formatMatch = !selectedFormat || config.format === selectedFormat;
+        const tarifMatch = !selectedTarif || config.tarif === selectedTarif;
+        const pagesMatch = !selectedPages || config.pages === selectedPages;
         return formatMatch && tarifMatch && pagesMatch;
       });
 
-      // Построение элементов на основе отфильтрованных данных
       filteredConfigs.forEach((config, index) => {
-        if (index % 4 === 0 && index !== 0) {
+        if (index % 2 === 0 && index !== 0) {
           albumContainer.appendChild(group);
           group = document.createElement('div');
           group.classList.add('configurator-albums__group');
@@ -587,7 +645,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const configItem = document.createElement('a');
         configItem.href = 'javascript:;';
         configItem.classList.add('configurator-albums__item');
-        if (albumContainer.children.length === 0 && index === 0) configItem.classList.add('active'); // Добавляем класс active только первому элементу
+        if (albumContainer.children.length === 0 && index === 0) configItem.classList.add('active');
         configItem.innerHTML = `<img src="${config.poster}" alt="" loading="lazy">`;
         group.appendChild(configItem);
 
@@ -597,83 +655,75 @@ document.addEventListener('DOMContentLoaded', function () {
           });
           configItem.classList.add('active');
 
-          // Обновляем галерею на основе выбранного альбома
-          updateGallery(config.gallery);
-
+          updateGallery(config.gallery, config.youtube);
           updateTotalInfo(config);
         });
 
-        if (index === 0) {
-          // Автоматически обновляем галерею для первого элемента
-          updateGallery(config.gallery);
-        }
-
-        if (index === filteredConfigs.length - 1) {
-          // Проверяем количество элементов в последней группе
-          if (group.children.length === 1 || group.children.length === 2) {
-            group.classList.add('small');
-          }
-          albumContainer.appendChild(group);
-        }
+        if (index === 0) updateGallery(config.gallery, config.youtube);
+        if (index === filteredConfigs.length - 1) albumContainer.appendChild(group);
       });
 
       if (filteredConfigs.length > 0) {
-        // Обновляем информацию и галерею для первого элемента после фильтрации
+        updateGallery(filteredConfigs[0].gallery, filteredConfigs[0].youtube);
         updateTotalInfo(filteredConfigs[0]);
-        updateGallery(filteredConfigs[0].gallery);
       }
 
-      // Обновляем SimpleBar, если используется для кастомного скроллбара
       new SimpleBar(document.querySelector('.configurator-albums'), {
         forceVisible: 'x',
       });
     }
-    // Вызываем updateAlbums при изменении любого из select
-    formatSelect.onchange = () => {
-      resetSelect(tarifSelect);
-      resetSelect(pagesSelect);
-      updateSelect(tarifSelect, 'tarif', formatSelect.value, null);
-      updateAlbums(); // Перерисовка альбомов
-    };
 
-    tarifSelect.onchange = () => {
-      resetSelect(pagesSelect);
-      updateSelect(pagesSelect, 'pages', formatSelect.value, tarifSelect.value);
-      updateAlbums(); // Перерисовка альбомов
-    };
-
-    pagesSelect.onchange = () => {
-      updateAlbums(); // Перерисовка альбомов
-    };
-
-    // Вызываем updateAlbums в первый раз для инициализации
-    updateAlbums();
-
-    function updateGallery(images) {
+    function updateGallery(images, youtubeLink = '') {
       const mainGalleryList = document.querySelector('.configurator-gallery__main .splide__list');
       const thumbnailsGalleryList = document.querySelector('.configurator-gallery__thumbnails .splide__list');
 
-      // Очищаем текущие изображения в галереях
       mainGalleryList.innerHTML = '';
       thumbnailsGalleryList.innerHTML = '';
 
-      // Создаем новые элементы списка на основе полученных изображений
       images.forEach((image) => {
         const mainSlide = document.createElement('li');
         mainSlide.classList.add('splide__slide');
-        mainSlide.innerHTML = `<img src="${image}" alt="">`;
 
-        const thumbSlide = mainSlide.cloneNode(true);
+        const thumbnailSlide = mainSlide.cloneNode(true);
+
+        const mainImageLink = document.createElement('a');
+        mainImageLink.href = image;
+        mainImageLink.setAttribute('data-fancybox', 'gallery');
+        mainImageLink.innerHTML = `<img src="${image}" alt="">`;
+
+        mainSlide.appendChild(mainImageLink);
+        thumbnailSlide.innerHTML = `<img src="${image}" alt="">`;
 
         mainGalleryList.appendChild(mainSlide);
-        thumbnailsGalleryList.appendChild(thumbSlide);
+        thumbnailsGalleryList.appendChild(thumbnailSlide);
       });
 
-      // Перезагружаем обе галереи Splide, чтобы применить изменения
+      if (youtubeLink && images.length > 0) {
+        const lastImage = images[images.length - 1];
+
+        const videoSlide = document.createElement('li');
+        videoSlide.classList.add('splide__slide');
+
+        const videoLink = document.createElement('a');
+        videoLink.href = youtubeLink;
+        videoLink.setAttribute('data-fancybox', '');
+        videoLink.setAttribute('class', 'video-slide');
+        videoLink.innerHTML = `<img src="${lastImage}" alt="">`;
+
+        videoSlide.appendChild(videoLink);
+        mainGalleryList.appendChild(videoSlide);
+
+        const videoThumbSlide = document.createElement('li');
+        videoThumbSlide.classList.add('splide__slide');
+        videoThumbSlide.classList.add('video-slide');
+        videoThumbSlide.innerHTML = `<img src="${lastImage}" alt="">`;
+
+        thumbnailsGalleryList.appendChild(videoThumbSlide);
+      }
+
       configuratorMain.refresh();
       configuratorThumbnails.refresh();
 
-      // Переходим к первому слайду в обеих галереях
       configuratorMain.go(0);
       configuratorThumbnails.go(0);
     }
@@ -684,5 +734,28 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.currentTarif').textContent = config.tarif;
       document.querySelector('.currentPages').textContent = config.pages;
     }
+
+    updateAlbums();
   }
+
+  document.querySelector('form').addEventListener('submit', function (event) {
+    event.preventDefault(); // предотвращаем стандартное поведение отправки формы
+
+    const formData = new FormData(this);
+
+    fetch(this.action, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          ym(55208869, 'reachGoal', 'all_form');
+        } else {
+          console.error('Ошибка отправки формы');
+        }
+      })
+      .catch((error) => {
+        console.error('Ошибка отправки формы', error);
+      });
+  });
 });

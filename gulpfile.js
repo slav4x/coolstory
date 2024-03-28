@@ -81,6 +81,7 @@ const libs_js = () => {
     'src/js/vendor/splide.min.js',
     'src/js/vendor/sticky-sidebar.js',
     'src/js/vendor/simplebar.min.js',
+    'src/js/vendor/choices.min.js',
   ])
     .pipe(isMinify ? uglify() : noop())
     .pipe(isMinify ? concat('libs.min.js') : concat('libs.js'))

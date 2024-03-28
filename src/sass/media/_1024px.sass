@@ -804,10 +804,19 @@
     gap: 8px
     margin-bottom: 20px
   .configurator-label
-    select
+    .choices__inner
       height: 70px
       font-size: 14px
-      padding-left: 20px
+      padding-left: 20px !important
+    .choices__list--dropdown
+      margin-top: -10px
+      padding: 10px 0
+      .choices__item
+        padding: 15px 20px
+        font-size: 14px
+    &:first-child
+      .choices__list--dropdown
+        width: calc(200% + 8px)
     &:last-child
       flex: initial
       width: 100%
@@ -818,11 +827,11 @@
     padding: 0 0 20px
     height: 300px
   .configurator-albums__group
-    width: 160px
+    width: 70px
     height: 215px
     gap: 15px 20px
     &:last-child
-      width: 180px
+      width: 90px
       padding-right: 20px
     &.small
       width: 90px
@@ -832,9 +841,9 @@
   .configurator
     .simplebar-content
       display: grid
-      grid-template-columns: repeat(auto-fill,minmax(160px, 160px))
+      grid-template-columns: repeat(auto-fill,minmax(70px, 70px))
       grid-auto-flow: column
-      grid-auto-columns: minmax(160px, 160px)
+      grid-auto-columns: minmax(70px, 70px)
   .configurator-total
     padding: 25px 30px
     flex-direction: column
@@ -855,3 +864,6 @@
     display: block
   .configurator-manager
     display: flex
+
+  .configurator-row
+    display: none

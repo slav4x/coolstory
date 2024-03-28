@@ -15,6 +15,10 @@
   margin: 0 auto
   transition: .5s
   z-index: 50
+  &.nofixed
+    box-shadow: 21px 16px 59px 0px rgba(83, 86, 95, 0.10), 84px 66px 107px 0px rgba(83, 86, 95, 0.09), 190px 148px 145px 0px rgba(83, 86, 95, 0.05), 337px 264px 171px 0px rgba(83, 86, 95, 0.01), 527px 412px 187px 0px rgba(83, 86, 95, 0.00) !important
+    transform: none !important
+    position: absolute !important
   &.hide
     transform: translateY(calc(-100% - 20px))
     box-shadow: none
